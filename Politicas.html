@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas - Artesanía en Madera</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Secciones generales */
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Navegación de políticas */
+        .politicas-nav {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+        
+        .politicas-lista {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .politicas-lista li {
+            margin: 0;
+        }
+        
+        .politicas-lista a {
+            display: block;
+            padding: 1rem 2rem;
+            background: var(--color-light);
+            color: var(--color-primary);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .politicas-lista a:hover, .politicas-lista a.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        /* Contenido de políticas */
+        .politica-contenido {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .politica-seccion {
+            margin-bottom: 3rem;
+        }
+        
+        .politica-seccion:last-child {
+            margin-bottom: 0;
+        }
+        
+        .politica-seccion h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-light);
+        }
+        
+        .politica-seccion p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        
+        .politica-lista {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .politica-lista li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .politicas-lista {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .politicas-lista a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 1rem 0;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .nav-links a {
+                display: block;
+                padding: 1rem 2rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-politicas h1 {
+                font-size: 2.5rem;
+            }
+            
+            .politica-contenido {
+                padding: 2rem;
+            }
+            
+            .tabla-garantias {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+     <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">PRACTIK-BOX</div>
+                <button class="mobile-menu-btn">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="Nosotros.html">NOSOTROS</a></li>
+                    <li><a href="Productos.html">PRODUCTOS</a></li>
+                    <li><a href="proceso.html">PROCESO</a></li>
+                    <li><a href="Proyectos.html">PROYECTOS</a></li>
+                    <li><a href="#contacto">CONTACTO</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación de políticas -->
+    <section class="section">
+        <div class="container">
+            <div class="politicas-nav">
+                <ul class="politicas-lista">
+                    <li><a href="#terminos" class="active">Términos de Servicio</a></li>
+                    <li><a href="#privacidad">Política de Privacidad</a></li>
+                </ul>
+            </div>
+            
+            <!-- Términos de Servicio -->
+            <div id="terminos" class="politica-contenido">
+                <div class="section-title">
+                    <h2>Términos de Servicio</h2>
+                    <p>Condiciones generales para la contratación de nuestros servicios</p>
+                </div>
+                
+                <div class="politica-seccion">
+                    <h3>1. Alcance de los Servicios</h3>
+                    <p> Nos especializamos en el diseño, fabricación e instalación de muebles personalizados y accesorios de madera. Nuestros servicios incluyen:</p>
+                    <ul class="politica-lista">
+                        <li>Consultoría y diseño personalizado de muebles</li>
+                        <li>Fabricación artesanal de piezas únicas</li>
+                        <li>Instalación profesional en el domicilio del cliente</li>
+                        <li>Asesoramiento en mantenimiento y cuidado de los muebles</li>
+                    </ul>
+                </div>
+                
+                <div class="politica-seccion">
+                    <h3>2. Proceso de Contratación</h3>
+                    <p>El proceso de contratación se realiza mediante los siguientes pasos:</p>
+                    <ul class="politica-lista">
+                        <li><strong>Solicitud de cotización:</strong> El cliente completa el formulario con los detalles de su proyecto</li>
+                        <li><strong>Cotización:</strong> Enviamos una cotización detallada con precios y tiempos de entrega</li>
+                        <li><strong>Aprobación:</strong> El cliente aprueba la cotización y realiza el anticipo requerido</li>
+                        <li><strong>Fabricación:</strong> Iniciamos el proceso de fabricación del mueble</li>
+                        <li><strong>Instalación:</strong> Realizamos la instalación y entrega final</li>
+                    </ul>
+                </div>
+                
+                <div class="politica-seccion">
+                    <h3>3. Pagos y Facturación</h3>
+                    <p>Nuestros términos de pago son los siguientes:</p>
+                    <ul class="politica-lista">
+                        <li><strong>Anticipo:</strong> 50% al aprobar la cotización</li>
+                        <li><strong>Saldo:</strong> 50% al momento de la instalación o entrega</li>
+                        <li><strong>Métodos de pago:</strong> Aceptamos transferencias bancarias, tarjetas de crédito/débito y efectivo</li>
+                        <li><strong>Facturación:</strong> Emitimos factura electrónica por todos nuestros servicios</li>
+                    </ul>
+                    
+                    <div class="destacado">
+                        <p><strong>Nota importante:</strong> Los precios cotizados son válidos por 30 días naturales. Después de este período, pueden estar sujetos a ajustes según variaciones en costos de materiales.</p>
+                    </div>
+                </div>
+                
+                <div class="politica-seccion">
+                    <h3>4. Modificaciones y Cancelaciones</h3>
+                    <p>El cliente puede solicitar modificaciones al proyecto hasta 5 días después de aprobada la cotización. Después de este período, las modificaciones pueden generar costos adicionales.</p>
+                    <p>En caso de cancelación:</p>
+                    <ul class="politica-lista">
+                        <li>Cancelación dentro de las 48 horas posteriores a la aprobación: reembolso del 100% del anticipo</li>
+                        <li>Cancelación después de 48 horas pero antes del inicio de fabricación: reembolso del 80% del anticipo</li>
+                        <li>Cancelación después del inicio de fabricación: no aplica reembolso del anticipo</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Política de Privacidad -->
+            <div id="privacidad" class="politica-contenido">
+                <div class="section-title">
+                    <h2>Política de Privacidad</h2>
+                    <p>Cómo protegemos y utilizamos tu información personal</p>
+                </div>
+                
+                <div class="politica-seccion">
+                    <h3>1. Información que Recopilamos</h3>
+                    <p>Recopilamos información personal que nos proporcionas directamente cuando:</p>
+                    <ul class="politica-lista">
+                        <li>Completas formularios de cotización en nuestro sitio web</li>
+                        <li>Nos contactas por teléfono, email o redes sociales</li>
+                        <li>Solicitas información sobre nuestros productos o servicios</li>
+                        <li>Realizas una compra en nuestra tienda en línea</li>
+                    </ul>
+                    <p>La información recopilada puede incluir: nombre, dirección, teléfono, email, detalles del proyecto y preferencias de diseño.</p>
+                </div>
+                
+                <div class="politica-seccion">
+                    <h3>2. Uso de la Información</h3>
+                    <p>Utilizamos tu información personal para:</p>
+                    <ul class="politica-lista">
+                        <li>Procesar tus solicitudes de cotización y pedidos</li>
+                        <li>Comunicarnos contigo sobre tu proyecto</li>
+                        <li>Mejorar nuestros productos y servicios</li>
+                        <li>Enviar información promocional (solo con tu consentimiento explícito)</li>
+                        <li>Cumplir con obligaciones legales y regulatorias</li>
+                    </ul>
+                </div>
+                
+                <div class="politica-seccion">
+                    <h3>3. Protección de Datos</h3>
+                    <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal contra accesos no autorizados, alteración, divulgación o destrucción.</p>
+                    <p>Nuestras medidas de seguridad incluyen:</p>
+                    <ul class="politica-lista">
+                        <li>Encriptación de datos sensibles</li>
+                        <li>Acceso restringido a información personal</li>
+                        <li>Revisiones periódicas de nuestras prácticas de recopilación, almacenamiento y procesamiento de datos</li>
+                        <li>Capacitación del personal en prácticas de protección de datos</li>
+                    </ul>
+                </div>
+                
+                <div class="politica-seccion">
+                    <h3>4. Derechos del Usuario</h3>
+                    <p>De acuerdo con la legislación de protección de datos, tienes derecho a:</p>
+                    <ul class="politica-lista">
+                        <li>Acceder a tu información personal que tenemos en nuestros registros</li>
+                        <li>Solicitar la corrección de información inexacta o incompleta</li>
+                        <li>Solicitar la eliminación de tu información personal</li>
+                        <li>Oponerte al procesamiento de tu información para fines de marketing</li>
+                        <li>Solicitar la portabilidad de tus datos a otro proveedor de servicios</li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Artesanía en Madera</h3>
+                    <p>Especialistas en muebles personalizados y accesorios de madera de la más alta calidad.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="Nosotros.html">Nuestra Historia</a></li>
+                        <li><a href="Productos.html">Productos</a></li>
+                        <li><a href="proceso.html">Proceso de Cotización</a></li>
+                        <li><a href="Proyectos.html">Proyectos Destacados</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> Telefono: </li>
+                        <li><i class="fas fa-envelope"></i> Correo:</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Direccion: </li>
+                        <li><i class="fas fa-clock"></i> Horario: </li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Políticas</h3>
+                    <ul class="footer-links">
+                        <li><a href="#terminos">Términos de Servicio</a></li>
+                        <li><a href="#privacidad">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PRACTIK-BOX. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en un enlace (en móviles)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Navegación entre políticas
+        document.querySelectorAll('.politicas-lista a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remover clase active de todos los enlaces
+                document.querySelectorAll('.politicas-lista a').forEach(a => {
+                    a.classList.remove('active');
+                });
+                
+                // Agregar clase active al enlace clickeado
+                this.classList.add('active');
+                
+                // Obtener el objetivo del enlace
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                // Desplazarse suavemente al elemento objetivo
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Actualizar enlace activo según el scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.politica-contenido');
+            const navLinks = document.querySelectorAll('.politicas-lista a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
