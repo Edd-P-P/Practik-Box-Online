@@ -306,7 +306,7 @@ padding-top: 5px;
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #63310D 0%, var(--color-accent) 100%);
+    background: linear-gradient(135deg, var(--color-btn) 0%, var(--color-btn) 100%);
     box-shadow: 0 4px 20px var(--color-secondary);
     display: flex;
     align-items: center;
@@ -329,7 +329,7 @@ padding-top: 5px;
 
 .btn-scroll-top:hover {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 6px 24px var(--color-secondary);
+    box-shadow: 0 6px 24px var(--color-btn);
 }
 
 .btn-scroll-top:active {
@@ -510,7 +510,7 @@ footer {
     position: absolute;
     width: 40px;
     height: 2px;
-    background-color: var(--color-secondary);
+    background-color: var(--color-btn);
     bottom: 0;
     left: 0;
 }
@@ -709,5 +709,4 @@ footer {
     }
 
     }
-
 }
