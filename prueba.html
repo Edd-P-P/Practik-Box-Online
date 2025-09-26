@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - Artesanía en Madera</title>
+    <title>Proyectos Destacados - Artesanía en Madera</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -118,12 +118,12 @@
             color: var(--color-primary);
         }
         
-        /* Hero Section para Nosotros */
-        .hero-nosotros {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1601581875030-2fcc4e3ae221?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        /* Hero Section para Proyectos */
+        .hero-proyectos {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            height: 60vh;
+            height: 50vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -132,7 +132,7 @@
             margin-bottom: 3rem;
         }
         
-        .hero-nosotros h1 {
+        .hero-proyectos h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             color: white;
@@ -181,309 +181,311 @@
             transform: translateX(-50%);
         }
         
-        /* Historia y Artesanía */
-        .historia-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .historia-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .historia-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .historia-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .historia-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-        
-        .historia-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* Misión y Visión */
-        .mision-vision {
-            background-color: var(--color-light);
-        }
-        
-        .mv-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .mv-card {
-            background: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .mv-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .mv-icon {
-            font-size: 3.5rem;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-            display: inline-block;
-            width: 100px;
-            height: 100px;
-            background: var(--color-light);
-            border-radius: 50%;
+        /* Filtros de proyectos */
+        .filtros-proyectos {
             display: flex;
-            align-items: center;
             justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
         
-        .mv-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        .filtro-btn {
+            padding: 0.8rem 1.5rem;
+            background: white;
+            border: 2px solid var(--color-primary);
+            border-radius: 30px;
             color: var(--color-primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
         }
         
-        .mv-card p {
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        /* Nuestro Proceso - DISEÑO COMPLETAMENTE NUEVO */
-        .proceso-section {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .proceso-section:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            opacity: 0.03;
-            z-index: 0;
-        }
-        
-        .proceso-container {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-        }
-        
-        .proceso-paso {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .proceso-paso:nth-child(even) {
-            direction: rtl;
-        }
-        
-        .proceso-paso:nth-child(even) .proceso-content {
-            direction: ltr;
-        }
-        
-        .proceso-imagen {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            height: 350px;
-        }
-        
-        .proceso-imagen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .proceso-imagen:hover img {
-            transform: scale(1.05);
-        }
-        
-        .proceso-content {
-            padding: 2rem;
-        }
-        
-        .proceso-numero {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
+        .filtro-btn.active, .filtro-btn:hover {
             background: var(--color-primary);
             color: white;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 60px;
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
         }
         
-        .proceso-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--color-primary);
-        }
-        
-        .proceso-content p {
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        
-        .proceso-detalles {
-            background: var(--color-light);
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--color-primary);
-        }
-        
-        .proceso-detalles h4 {
-            margin-bottom: 0.5rem;
-            color: var(--color-accent);
-        }
-        
-        /* Galería de Taller */
-        .galeria-grid {
+        /* Grid de proyectos */
+        .proyectos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
         }
         
-        .galeria-item {
+        .proyecto-card {
+            background: white;
             border-radius: 10px;
             overflow: hidden;
-            position: relative;
-            height: 250px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
         }
         
-        .galeria-item:hover {
+        .proyecto-card:hover {
             transform: translateY(-10px);
         }
         
-        .galeria-item img {
+        .proyecto-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .proyecto-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
         
-        .galeria-item:hover img {
+        .proyecto-card:hover .proyecto-img img {
             transform: scale(1.1);
         }
         
-        .galeria-caption {
+        .proyecto-badge {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            top: 1rem;
+            right: 1rem;
+            background: var(--color-primary);
             color: white;
-            padding: 1rem;
-            transform: translateY(100%);
-            transition: transform 0.3s;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
         
-        .galeria-item:hover .galeria-caption {
-            transform: translateY(0);
+        .proyecto-content {
+            padding: 1.5rem;
         }
         
-        /* Equipo */
-        .equipo-section {
-            background-color: white;
+        .proyecto-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
         
-        .equipo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
+        .proyecto-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--color-accent);
         }
         
-        .equipo-card {
+        .proyecto-desc {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .proyecto-detalles {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .detalle-item {
             text-align: center;
+        }
+        
+        .detalle-item i {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Galería antes/después */
+        .antes-despues {
             background-color: var(--color-light);
+        }
+        
+        .comparacion-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
             border-radius: 10px;
-            padding: 2rem 1rem;
-            transition: transform 0.3s;
-        }
-        
-        .equipo-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .equipo-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
             overflow: hidden;
-            border: 5px solid var(--color-secondary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
-        .equipo-img img {
+        .imagen-comparacion {
+            display: flex;
+            position: relative;
+            height: 500px;
+        }
+        
+        .imagen-antes, .imagen-despues {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .imagen-despues {
+            width: 50%;
+            border-right: 3px solid white;
+        }
+        
+        .imagen-antes img, .imagen-despues img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         
-        .equipo-card h3 {
-            margin-bottom: 0.5rem;
+        .controlador {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: white;
+            cursor: col-resize;
+            transform: translateX(-50%);
         }
         
-        .equipo-card p {
-            color: var(--color-accent);
-            font-weight: 600;
+        .controlador:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
         }
         
-        /* Valores */
-        .valores-grid {
+        .controlador:before {
+            content: '↔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        
+        /* Testimonios */
+        .testimonios-section {
+            background: white;
+        }
+        
+        .testimonios-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         
-        .valor-card {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: white;
+        .testimonio-card {
+            background: var(--color-light);
+            padding: 2.5rem;
             border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
         }
         
-        .valor-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .valor-icon {
-            font-size: 3rem;
+        .testimonio-card:before {
+            font-family: Georgia, serif;
+            font-size: 5rem;
             color: var(--color-primary);
-            margin-bottom: 1rem;
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonio-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .testimonio-cliente {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cliente-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .cliente-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cliente-info h4 {
+            margin-bottom: 0.2rem;
+        }
+        
+        .cliente-info p {
+            color: var(--color-accent);
+            font-size: 0.9rem;
+        }
+        
+        /* Estadísticas */
+        .estadisticas {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .estadisticas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .estadistica-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .estadistica-item p {
+            font-size: 1.1rem;
+        }
+        
+        /* Llamada a la acción */
+        .cta-proyectos {
+            background: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--color-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--color-primary);
+        }
+        
+        .btn:hover {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+        
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
         }
         
         /* Footer */
@@ -570,23 +572,12 @@
         
         /* Responsive */
         @media (max-width: 968px) {
-            .historia-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+            .proyectos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
             
-            .mv-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .proceso-paso {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .proceso-paso:nth-child(even) {
-                direction: ltr;
+            .imagen-comparacion {
+                height: 400px;
             }
         }
         
@@ -621,16 +612,27 @@
                 display: block;
             }
             
-            .hero-nosotros h1 {
+            .hero-proyectos h1 {
                 font-size: 2.5rem;
             }
             
-            .galeria-grid {
+            .proyectos-grid {
                 grid-template-columns: 1fr;
             }
             
-            .mv-card {
-                padding: 2rem;
+            .filtros-proyectos {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filtro-btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+            
+            .imagen-comparacion {
+                height: 300px;
             }
         }
     </style>
@@ -644,10 +646,10 @@
                 <button class="mobile-menu-btn">☰</button>
                 <ul class="nav-links">
                     <li><a href="index.html">INICIO</a></li>
-                    <li><a href="nosotros.html" class="active">NOSOTROS</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
                     <li><a href="productos.html">PRODUCTOS</a></li>
                     <li><a href="proceso.html">PROCESO</a></li>
-                    <li><a href="proyectos.html">PROYECTOS</a></li>
+                    <li><a href="proyectos.html" class="active">PROYECTOS</a></li>
                     <li><a href="blog.html">BLOG</a></li>
                     <li><a href="contacto.html">CONTACTO</a></li>
                 </ul>
@@ -658,127 +660,213 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb">
         <div class="container">
-            <a href="index.html">Inicio</a> > <span>Nosotros</span>
+            <a href="index.html">Inicio</a> > <span>Proyectos Destacados</span>
         </div>
     </div>
 
-    <!-- Hero Section para Nosotros -->
-    <section class="hero-nosotros">
+    <!-- Hero Section para Proyectos -->
+    <section class="hero-proyectos">
         <div class="container">
             <div class="hero-content">
-                <h1>Nuestra Historia y Pasión por la Madera</h1>
-                <p>Conoce el corazón y el alma detrás de cada pieza que creamos</p>
+                <h1>Nuestros Proyectos Destacados</h1>
+                <p>Descubre cómo transformamos espacios con muebles personalizados de alta calidad</p>
             </div>
         </div>
     </section>
 
-    <!-- Historia y Artesanía -->
+    <!-- Proyectos Residenciales y Comerciales -->
     <section class="section">
         <div class="container">
-            <div class="historia-content">
-                <div class="historia-text">
-                    <h2>Una Tradición Familiar con Más de Tres Generaciones</h2>
-                    <p>Nuestra historia comenzó en 1950 cuando el abuelo Miguel, un carpintero apasionado, abrió un pequeño taller en el corazón del pueblo. Lo que empezó como un modesto negocio familiar se ha convertido en un legado que perdura hasta hoy.</p>
-                    <p>Durante más de 70 años, hemos perfeccionado nuestras técnicas, combinando métodos tradicionales con innovaciones modernas. Cada generación ha aportado su conocimiento único, creando un estilo distintivo que se refleja en cada pieza que sale de nuestro taller.</p>
-                    <p>Hoy, dirigidos por los nietos del fundador, mantenemos vivo el espíritu artesanal mientras adaptamos nuestros diseños a las necesidades contemporáneas. Creemos que la verdadera belleza de la madera reside en su capacidad para contar historias, y cada mueble que creamos lleva consigo un fragmento de nuestra rica herencia.</p>
-                </div>
-                <div class="historia-image">
-                    <img src="https://images.unsplash.com/photo-1574404281381-9847db0a4518?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Taller tradicional de carpintería">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Misión y Visión -->
-    <section class="section mision-vision">
-        <div class="container">
             <div class="section-title">
-                <h2>Nuestra Misión y Visión</h2>
-                <p>Los principios que guían nuestro trabajo y nuestro futuro</p>
+                <h2>Portafolio de Proyectos</h2>
+                <p>Una selección de nuestros trabajos más representativos</p>
             </div>
-            <div class="mv-container">
-                <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Misión</h3>
-                    <p>Crear muebles y accesorios de madera excepcionales que combinen la belleza artesanal con la funcionalidad moderna, superando las expectativas de nuestros clientes mediante un servicio personalizado y un compromiso inquebrantable con la calidad y la sostenibilidad.</p>
-                </div>
-                <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Visión</h3>
-                    <p>Ser reconocidos como el referente en artesanía de madera a nivel nacional, manteniendo viva la tradición carpintera mientras innovamos en diseño y técnicas, creando piezas que se conviertan en herencias familiares y contribuyan a espacios más cálidos y auténticos.</p>
-                </div>
+            
+            <!-- Filtros de proyectos -->
+            <div class="filtros-proyectos">
+                <button class="filtro-btn active" data-categoria="todos">Todos los Proyectos</button>
+                <button class="filtro-btn" data-categoria="residencial">Residencial</button>
+                <button class="filtro-btn" data-categoria="comercial">Comercial</button>
             </div>
-        </div>
-    </section>
-
-    <!-- Nuestro Proceso - DISEÑO COMPLETAMENTE NUEVO -->
-    <section class="section proceso-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nuestro Proceso Artesanal</h2>
-                <p>Desde la selección de la madera hasta el acabado final, cada paso es realizado con dedicación y maestría</p>
-            </div>
-            <div class="proceso-container">
-                <div class="proceso-paso">
-                    <div class="proceso-imagen">
-                        <img src="https://images.unsplash.com/photo-1600353068446-84c525b963f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Selección de maderas">
+            
+            <!-- Grid de proyectos -->
+            <div class="proyectos-grid">
+                <!-- Proyecto 1 - Residencial -->
+                <div class="proyecto-card" data-categoria="residencial">
+                    <div class="proyecto-img">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Closet moderno">
+                        <span class="proyecto-badge">Residencial</span>
                     </div>
-                    <div class="proceso-content">
-                        <div class="proceso-numero">1</div>
-                        <h3>Selección de Maderas</h3>
-                        <p>Seleccionamos cuidadosamente cada tabla de madera, evaluando su grano, color y características únicas. Trabajamos con proveedores sostenibles que comparten nuestro compromiso con el medio ambiente.</p>
-                        <div class="proceso-detalles">
-                            <h4>Materiales que utilizamos:</h4>
-                            <p>Roble, Nogal, Cerezo, Pino y maderas locales de fuentes responsables.</p>
+                    <div class="proyecto-content">
+                        <h3>Closet Moderno para Dormitorio Principal</h3>
+                        <div class="proyecto-meta">
+                            <span><i class="far fa-calendar"></i> Enero 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</span>
+                        </div>
+                        <p class="proyecto-desc">Closet empotrado con sistema de cajones inteligentes, barras colgantes y compartimentos especiales para calzado y accesorios. Diseño moderno con acabados en melamina blanca y detalles en madera de roble.</p>
+                        <div class="proyecto-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>4.2m x 2.4m</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-clock"></i>
+                                <span>3 semanas</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Roble</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="proceso-paso">
-                    <div class="proceso-imagen">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Diseño y planificación">
+                <!-- Proyecto 2 - Comercial -->
+                <div class="proyecto-card" data-categoria="comercial">
+                    <div class="proyecto-img">
+                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Oficina ejecutiva">
+                        <span class="proyecto-badge">Comercial</span>
                     </div>
-                    <div class="proceso-content">
-                        <div class="proceso-numero">2</div>
-                        <h3>Diseño y Planificación</h3>
-                        <p>Cada proyecto comienza con un diseño detallado que considera tanto la estética como la funcionalidad. Colaboramos estrechamente con nuestros clientes para asegurar que cada pieza se adapte perfectamente a sus necesidades y espacios.</p>
-                        <div class="proceso-detalles">
-                            <h4>Nuestro enfoque:</h4>
-                            <p>Diseños personalizados, planos detallados y visualizaciones en 3D.</p>
+                    <div class="proyecto-content">
+                        <h3>Oficina Ejecutiva con Muebles Personalizados</h3>
+                        <div class="proyecto-meta">
+                            <span><i class="far fa-calendar"></i> Marzo 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Medellín, Colombia</span>
+                        </div>
+                        <p class="proyecto-desc">Conjunto de muebles para oficina ejecutiva incluyendo escritorio, librería y área de reuniones. Diseño minimalista con madera de nogal y acabados de alta resistencia para uso intensivo.</p>
+                        <div class="proyecto-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>Oficina completa</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-clock"></i>
+                                <span>6 semanas</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Nogal</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="proceso-paso">
-                    <div class="proceso-imagen">
-                        <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Fabricación artesanal">
+                <!-- Proyecto 3 - Residencial -->
+                <div class="proyecto-card" data-categoria="residencial">
+                    <div class="proyecto-img">
+                        <img src="https://images.unsplash.com/photo-1560769684-55015d5f9c2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cocina integral">
+                        <span class="proyecto-badge">Residencial</span>
                     </div>
-                    <div class="proceso-content">
-                        <div class="proceso-numero">3</div>
-                        <h3>Fabricación Artesanal</h3>
-                        <p>Nuestros maestros artesanos utilizan una combinación de herramientas tradicionales y tecnología moderna para dar forma a la madera. Cada corte, cada unión, es realizado con precisión y atención al detalle.</p>
-                        <div class="proceso-detalles">
-                            <h4>Técnicas empleadas:</h4>
-                            <p>Ensamblaje a cola de milano, tallado manual, torneado y carpintería de precisión.</p>
+                    <div class="proyecto-content">
+                        <h3>Cocina Integral con Isla Central</h3>
+                        <div class="proyecto-meta">
+                            <span><i class="far fa-calendar"></i> Mayo 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Cali, Colombia</span>
+                        </div>
+                        <p class="proyecto-desc">Cocina integral con diseño en L e isla central. Incluye muebles altos y bajos, espacio para electrodomésticos y amplio almacenamiento. Acabados en melamina de alta resistencia y encimera de granito.</p>
+                        <div class="proyecto-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>5.8m x 3.2m</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-clock"></i>
+                                <span>4 semanas</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Melamina</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="proceso-paso">
-                    <div class="proceso-imagen">
-                        <img src="https://images.unsplash.com/photo-1601581874867-347a4d2be5b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Acabado y pulido">
+                <!-- Proyecto 4 - Comercial -->
+                <div class="proyecto-card" data-categoria="comercial">
+                    <div class="proyecto-img">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restaurante">
+                        <span class="proyecto-badge">Comercial</span>
                     </div>
-                    <div class="proceso-content">
-                        <div class="proceso-numero">4</div>
-                        <h3>Acabado y Pulido</h3>
-                        <p>Aplicamos acabados naturales que realzan la belleza inherente de la madera mientras la protegen. Utilizamos técnicas de lijado y pulido que requieren paciencia y experiencia para lograr un resultado impecable.</p>
-                        <div class="proceso-detalles">
-                            <h4>Acabados disponibles:</h4>
-                            <p>Aceites naturales, ceras, barnices ecológicos y lacas de alta resistencia.</p>
+                    <div class="proyecto-content">
+                        <h3>Mobiliario para Restaurante Temático</h3>
+                        <div class="proyecto-meta">
+                            <span><i class="far fa-calendar"></i> Julio 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Cartagena, Colombia</span>
+                        </div>
+                        <p class="proyecto-desc">Mobiliario completo para restaurante con temática rústica. Incluye mesas, sillas, barra y elementos decorativos. Madera de pino tratada para resistir humedad y uso intensivo.</p>
+                        <div class="proyecto-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>30+ piezas</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-clock"></i>
+                                <span>8 semanas</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Pino</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 5 - Residencial -->
+                <div class="proyecto-card" data-categoria="residencial">
+                    <div class="proyecto-img">
+                        <img src="https://images.unsplash.com/photo-1560769684-55015d5f9c2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Biblioteca">
+                        <span class="proyecto-badge">Residencial</span>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3>Biblioteca Empotrada para Estudio</h3>
+                        <div class="proyecto-meta">
+                            <span><i class="far fa-calendar"></i> Septiembre 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Barranquilla, Colombia</span>
+                        </div>
+                        <p class="proyecto-desc">Biblioteca empotrada desde piso a techo con diseño personalizado para estudio. Incluye espacios para libros, objetos decorativos y área de trabajo integrada. Madera de cerezo con acabado natural.</p>
+                        <div class="proyecto-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>3.5m x 2.8m</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-clock"></i>
+                                <span>3 semanas</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-tree"></i>
+                                <span>Cerezo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Proyecto 6 - Comercial -->
+                <div class="proyecto-card" data-categoria="comercial">
+                    <div class="proyecto-img">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tienda">
+                        <span class="proyecto-badge">Comercial</span>
+                    </div>
+                    <div class="proyecto-content">
+                        <h3>Muebles para Tienda de Ropa</h3>
+                        <div class="proyecto-meta">
+                            <span><i class="far fa-calendar"></i> Noviembre 2023</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bucaramanga, Colombia</span>
+                        </div>
+                        <p class="proyecto-desc">Muebles expositores y de almacenamiento para tienda de ropa. Diseño moderno y funcional con estantes ajustables, perchas integradas y mostrador de atención al cliente.</p>
+                        <div class="proyecto-detalles">
+                            <div class="detalle-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>Tienda completa</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-clock"></i>
+                                <span>5 semanas</span>
+                            </div>
+                            <div class="detalle-item">
+                                <i class="fas fa-tree"></i>
+                                <span>MDF lacado</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -786,140 +874,116 @@
         </div>
     </section>
 
-    <!-- Galería de Taller -->
-    <section class="section">
+    <!-- Galería antes/después -->
+    <section class="section antes-despues">
         <div class="container">
             <div class="section-title">
-                <h2>Galería de Nuestro Taller</h2>
-                <p>Un vistazo detrás de escena a donde la magia ocurre</p>
+                <h2>Transformación de Espacios</h2>
+                <p>Descubre el antes y después de algunos de nuestros proyectos</p>
             </div>
-            <div class="galeria-grid">
-                <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1600353068446-84c525b963f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Herramientas de carpintería">
-                    <div class="galeria-caption">
-                        <h3>Nuestras Herramientas</h3>
-                        <p>Combinamos herramientas tradicionales con tecnología moderna</p>
+            
+            <div class="comparacion-container">
+                <div class="imagen-comparacion">
+                    <div class="imagen-despues">
+                        <img src="Imagenes/Productos/Closets y Vestidores.jpg" alt="Después">
+                    </div>
+                    <div class="imagen-antes">
+                        <img src="Imagenes/Productos/Mueble de baño.jpg" alt="Antes">
+                    </div>
+                    <div class="controlador"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section testimonios-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonios de Clientes</h2>
+                <p>Lo que nuestros clientes dicen sobre su experiencia con nosotros</p>
+            </div>
+            
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <div class="testimonio-text">
+                        "Quedé absolutamente impresionado con la calidad de mi closet personalizado. El equipo entendió exactamente lo que necesitaba y el resultado superó mis expectativas. La atención al detalle es excepcional."
+                    </div>
+                    <div class="testimonio-cliente">
+                        <div class="cliente-img">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Carlos M.">
+                        </div>
+                        <div class="cliente-info">
+                            <h4>Carlos M.</h4>
+                            <p>Proyecto: Closet Moderno</p>
+                        </div>
                     </div>
                 </div>
-                <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Proceso de ensamblaje">
-                    <div class="galeria-caption">
-                        <h3>Proceso de Ensamblaje</h3>
-                        <p>Cada pieza es cuidadosamente ensamblada a mano</p>
+                
+                <div class="testimonio-card">
+                    <div class="testimonio-text">
+                        "La cocina que diseñaron para mi casa es simplemente perfecta. Cada detalle fue cuidadosamente pensado y la madera es de una calidad excepcional. Cinco años después, sigue luciendo como el primer día."
+                    </div>
+                    <div class="testimonio-cliente">
+                        <div class="cliente-img">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Ana L.">
+                        </div>
+                        <div class="cliente-info">
+                            <h4>Ana L.</h4>
+                            <p>Proyecto: Cocina Integral</p>
+                        </div>
                     </div>
                 </div>
-                <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Detalles de acabado">
-                    <div class="galeria-caption">
-                        <h3>Detalles de Acabado</h3>
-                        <p>Los acabados naturales realzan la belleza de la madera</p>
+                
+                <div class="testimonio-card">
+                    <div class="testimonio-text">
+                        "Contratamos a Artesanía en Madera para el mobiliario de nuestro restaurante y fue la mejor decisión. Los muebles no solo son hermosos sino también extremadamente funcionales y resistentes. Nuestros clientes siempre preguntan por ellos."
                     </div>
-                </div>
-                <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1601581874867-347a4d2be5b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Taller de trabajo">
-                    <div class="galeria-caption">
-                        <h3>Nuestro Espacio de Trabajo</h3>
-                        <p>Un ambiente inspirador donde la creatividad fluye</p>
-                    </div>
-                </div>
-                <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1574404281381-9847db0a4518?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Maderas seleccionadas">
-                    <div class="galeria-caption">
-                        <h3>Selección de Maderas</h3>
-                        <p>Materiales de la más alta calidad para cada proyecto</p>
-                    </div>
-                </div>
-                <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1600353068788-f2f6ba7ce6c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Proyectos en proceso">
-                    <div class="galeria-caption">
-                        <h3>Proyectos en Desarrollo</h3>
-                        <p>Cada pieza recibe atención personalizada</p>
+                    <div class="testimonio-cliente">
+                        <div class="cliente-img">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Roberto G.">
+                        </div>
+                        <div class="cliente-info">
+                            <h4>Roberto G.</h4>
+                            <p>Proyecto: Mobiliario para Restaurante</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nuestro Equipo -->
-    <section class="section equipo-section">
+    <!-- Estadísticas -->
+    <section class="estadisticas">
         <div class="container">
-            <div class="section-title">
-                <h2>Nuestro Equipo de Artesanos</h2>
-                <p>Conoce a las manos talentosas detrás de cada creación</p>
-            </div>
-            <div class="equipo-grid">
-                <div class="equipo-card">
-                    <div class="equipo-img">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Miguel Ángel">
-                    </div>
-                    <h3>Miguel Ángel</h3>
-                    <p>Maestro Carpintero</p>
-                    <p>Con 40 años de experiencia, Miguel es nuestro director de taller y guardián de las técnicas tradicionales.</p>
+            <div class="estadisticas-grid">
+                <div class="estadistica-item">
+                    <h3>250+</h3>
+                    <p>Proyectos Completados</p>
                 </div>
-                <div class="equipo-card">
-                    <div class="equipo-img">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Elena">
-                    </div>
-                    <h3>Elena</h3>
-                    <p>Diseñadora y Proyectista</p>
-                    <p>Elena combina su formación en diseño con un profundo conocimiento de los materiales para crear piezas únicas.</p>
+                <div class="estadistica-item">
+                    <h3>98%</h3>
+                    <p>Clientes Satisfechos</p>
                 </div>
-                <div class="equipo-card">
-                    <div class="equipo-img">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Carlos">
-                    </div>
-                    <h3>Carlos</h3>
-                    <p>Especialista en Acabados</p>
-                    <p>Carlos tiene un don para realzar la belleza natural de la madera con acabados impecables y duraderos.</p>
+                <div class="estadistica-item">
+                    <h3>15</h3>
+                    <p>Años de Experiencia</p>
                 </div>
-                <div class="equipo-card">
-                    <div class="equipo-img">
-                        <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Ana">
-                    </div>
-                    <h3>Ana</h3>
-                    <p>Artesana y Tallista</p>
-                    <p>Ana es nuestra especialista en detalles decorativos y tallas artesanales que dan carácter a cada pieza.</p>
+                <div class="estadistica-item">
+                    <h3>50+</h3>
+                    <p>Proyectos Comerciales</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nuestros Valores -->
+    <!-- Llamada a la acción -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Nuestros Valores Fundamentales</h2>
-                <p>Principios que guían cada aspecto de nuestro trabajo</p>
-            </div>
-            <div class="valores-grid">
-                <div class="valor-card">
-                    <div class="valor-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Sostenibilidad</h3>
-                    <p>Trabajamos con maderas de fuentes responsables y utilizamos procesos que minimizan nuestro impacto ambiental.</p>
-                </div>
-                <div class="valor-card">
-                    <div class="valor-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Calidad</h3>
-                    <p>No aceptamos atajos. Cada pieza es creada con los más altos estándares de calidad y durabilidad.</p>
-                </div>
-                <div class="valor-card">
-                    <div class="valor-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Pasión</h3>
-                    <p>Amamos lo que hacemos, y esa pasión se refleja en el cuidado y dedicación que ponemos en cada proyecto.</p>
-                </div>
-                <div class="valor-card">
-                    <div class="valor-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Compromiso</h3>
-                    <p>Nos comprometemos con nuestros clientes desde el primer contacto hasta la entrega final y más allá.</p>
-                </div>
+            <div class="cta-proyectos">
+                <h2>¿Te gustaría ver tu proyecto aquí?</h2>
+                <p>Contáctanos y comencemos a trabajar en la transformación de tus espacios</p>
+                <a href="proceso.html" class="btn btn-large">Solicitar Cotización</a>
             </div>
         </div>
     </section>
@@ -986,6 +1050,59 @@
                     document.querySelector('.nav-links').classList.remove('active');
                 }
             });
+        });
+        
+        // Filtrado de proyectos
+        document.querySelectorAll('.filtro-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remover clase active de todos los botones
+                document.querySelectorAll('.filtro-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Agregar clase active al botón clickeado
+                this.classList.add('active');
+                
+                // Obtener la categoría a filtrar
+                const categoria = this.getAttribute('data-categoria');
+                
+                // Mostrar/ocultar proyectos según la categoría
+                document.querySelectorAll('.proyecto-card').forEach(proyecto => {
+                    if (categoria === 'todos' || proyecto.getAttribute('data-categoria') === categoria) {
+                        proyecto.style.display = 'block';
+                    } else {
+                        proyecto.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Comparador antes/después
+        const comparador = document.querySelector('.comparacion-container');
+        const controlador = document.querySelector('.controlador');
+        const imagenDespues = document.querySelector('.imagen-despues');
+        
+        let isMouseDown = false;
+        
+        controlador.addEventListener('mousedown', function(e) {
+            isMouseDown = true;
+        });
+        
+        document.addEventListener('mouseup', function() {
+            isMouseDown = false;
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (!isMouseDown) return;
+            
+            const comparadorRect = comparador.getBoundingClientRect();
+            const x = e.clientX - comparadorRect.left;
+            
+            if (x < 0 || x > comparadorRect.width) return;
+            
+            const porcentaje = (x / comparadorRect.width) * 100;
+            imagenDespues.style.width = `${porcentaje}%`;
+            controlador.style.left = `${porcentaje}%`;
         });
         
         // Efecto de desplazamiento suave para los enlaces

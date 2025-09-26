@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #63310D;
 }
 
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -109,6 +110,10 @@ header {
 
 .hero-content p {
 padding-top: 5px;
+}
+
+.btn-readmore{
+    margin-left: 30%;
 }
 
 .btn {
@@ -695,6 +700,14 @@ footer {
     .map-visual,
     .map-visual iframe {
         min-height: 250px;
+    }
+
+    @media (max-width: 330px ){
+        .contact-text p{
+        font-size: 1rem;
+        padding-right: 25px;
+    }
+
     }
 
 }
