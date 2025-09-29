@@ -90,7 +90,7 @@ header {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Imagenes/Index/header-top.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Imagenes/Index/hero-top.png');
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -550,6 +550,7 @@ footer {
     margin-right: 10px;
     color: white;
     transition: all 0.3s;
+    text-decoration: none
 }
 
 .social-icons a:hover {
