@@ -402,7 +402,7 @@ padding-top: 5px;
 
 .map-visual {
     position: relative;
-    padding-bottom: 75%; /* Proporción 4:3 */
+    padding-bottom: 75%; 
     height: 0;
     overflow: hidden;
 }
@@ -428,7 +428,7 @@ padding-top: 5px;
     color: #63310D;
     margin-bottom: 25px;
     padding-bottom: 15px;
-    border-bottom: 3px solid var(--color-accent);
+    border-bottom: 3px solid var(--color-btn);
 }
 
 .contact-item {
@@ -441,7 +441,7 @@ padding-top: 5px;
 }
 
 .contact-icon {
-  background-color: var(--color-primary);
+  background-color: var(--color-btn);
   color: var(--white, #fff);
   width: 50px;
   height: 50px;
