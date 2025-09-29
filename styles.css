@@ -6,6 +6,7 @@
     --color-text: #333333; /* Texto principal */
     --color-accent: #A0522D; /* Acento madera oscuro */
     --color-btn: #800000; /*Color para botones */
+    --color-icon: #63310D; /*Color para los iconos */
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header y Navegación */
 header {
-    background-color: white;
+    background-color: var(--color-accent);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -53,15 +54,15 @@ header {
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    padding-top: 15px;
 }
 
 .nav-links li {
@@ -70,13 +71,13 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--color-text);
+    color: white;
     font-weight: 600;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 .mobile-menu-btn {
@@ -85,7 +86,7 @@ header {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--color-primary);
+    color: white;
 }
 
 /* Hero Section */
@@ -594,10 +595,14 @@ footer {
     .intro-image {
         order: -1;
     }
+
+    .logo {
+        font-size: 1.5rem;
+    }
 }
 
+@media (max-width: 900px){
 
-@media (max-width: 768px) {
     .nav-links {
         display: none;
         flex-direction: column;
@@ -605,7 +610,7 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: white;
+        background-color: var(--color-accent);
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         padding: 1rem 0;
     }
@@ -627,7 +632,12 @@ footer {
     .mobile-menu-btn {
         display: block;
     }
-    
+
+}
+
+
+@media (max-width: 768px) {
+ 
     .hero-content h1 {
         font-size: 2.5rem;
     }
