@@ -193,25 +193,196 @@
             font-size: 1.1rem;
         }
 
-        @media (max-width: 330px){
-        .hero-proyectos h1 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        /* ANIMACIONES */
+        
+        /* Animaciones de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Animación para hero */
+        .hero-proyectos .hero-content {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Animación para títulos de sección */
+        .section-title h2 {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--color-primary);
+            transition: width 0.8s ease;
+        }
+        
+        .section-title.animated h2::after {
+            width: 100%;
+        }
+        
+        /* Animación para botones de filtro */
+        .filtro-btn {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filtro-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .filtro-btn:hover::before {
+            left: 100%;
+        }
+        
+        .filtro-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Animación para tarjetas de proyectos */
+        .proyecto-card {
+            opacity: 0;
+            transform: translateY(30px) scale(0.95);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .proyecto-card.animated {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        
+        .proyecto-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        /* Animación para badges de proyectos */
+        .proyecto-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .proyecto-card:hover .proyecto-badge {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--color-primary);
+        }
+        
+        /* Animación para iconos de detalles */
+        .detalle-item i {
+            transition: all 0.3s ease;
+        }
+        
+        .proyecto-card:hover .detalle-item i {
+            transform: scale(1.2);
+            color: var(--color-primary);
+        }
+        
+        /* Animación para imágenes de proyectos */
+        .proyecto-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .proyecto-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: left 0.8s ease;
+            z-index: 1;
+        }
+        
+        .proyecto-card:hover .proyecto-img::before {
+            left: 100%;
+        }
+        
+        /* Animación para CTA */
+        .cta-proyectos {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+        }
+        
+        .cta-proyectos.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .cta-proyectos:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        /* Animación de filtrado de proyectos */
+        .proyecto-card {
+            transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        
+        .proyecto-card.filtered-out {
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+            pointer-events: none;
+        }
+        
+        .proyecto-card.filtered-in {
+            opacity: 1;
+            transform: scale(1) translateY(0);
         }
 
-        .proyecto-card {
-            width: 280px;
+        @media (max-width: 330px){
+            .hero-proyectos h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
 
-}
-    }
-
+            .proyecto-card {
+                width: 280px;
+            }
+        }
     </style>
 </head>
 <body>
      <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">PRACTIK-BOX</div>
+                <a href="index.html"><div class="logo">PRACTIK-BOX</div></a>
                 <button class="mobile-menu-btn">☰</button>
                 <ul class="nav-links">
                     <li><a href="index.html">INICIO</a></li>
@@ -238,7 +409,7 @@
     <!-- Proyectos Residenciales y Comerciales -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fade-in">
                 <h2>Portafolio de proyectos.</h2>
                 <p>Una selección de nuestros trabajos más representativos.</p>
             </div>
@@ -343,7 +514,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Sección: En Dónde Estamos -->
     <section class="contact-section" id="contacto">
@@ -479,23 +649,105 @@
             </div>
         </div>
     </footer>
-</body>
 
-<!-- Bootstrap JavaScript Libraries -->
-<script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"
-></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+    ></script>
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"
-></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"
+    ></script>
 
-<script>
-            // Filtrado de proyectos
+    <script>
+        // Animación de elementos al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const sectionTitles = document.querySelectorAll('.section-title');
+            const proyectoCards = document.querySelectorAll('.proyecto-card');
+            const ctaProyectos = document.querySelector('.cta-proyectos');
+            const filtroBtns = document.querySelectorAll('.filtro-btn');
+            const mapVisual = document.querySelector('.map-visual');
+            const contactInfo = document.querySelector('.contact-info-section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Animación para títulos de sección
+                        if (entry.target.classList.contains('section-title')) {
+                            entry.target.classList.add('animated');
+                        }
+                        
+                        // Animación escalonada para proyectos
+                        if (entry.target.classList.contains('proyectos-grid')) {
+                            proyectoCards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.classList.add('animated');
+                                }, index * 200);
+                            });
+                        }
+                        
+                        // Animación para CTA
+                        if (entry.target.classList.contains('cta-proyectos')) {
+                            setTimeout(() => {
+                                ctaProyectos.classList.add('animated');
+                            }, 300);
+                        }
+                        
+                        // Animación para botones de filtro
+                        if (entry.target.classList.contains('filtros-proyectos')) {
+                            filtroBtns.forEach((btn, index) => {
+                                setTimeout(() => {
+                                    btn.classList.add('animated');
+                                }, index * 100);
+                            });
+                        }
+                        
+                        // Animación para mapa y contacto
+                        if (entry.target.classList.contains('contact-content')) {
+                            setTimeout(() => {
+                                if (mapVisual) mapVisual.classList.add('animated');
+                            }, 300);
+                            
+                            setTimeout(() => {
+                                if (contactInfo) contactInfo.classList.add('animated');
+                            }, 600);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            fadeElements.forEach(el => observer.observe(el));
+            sectionTitles.forEach(title => observer.observe(title));
+            document.querySelector('.proyectos-grid') && observer.observe(document.querySelector('.proyectos-grid'));
+            document.querySelector('.cta-proyectos') && observer.observe(document.querySelector('.cta-proyectos'));
+            document.querySelector('.filtros-proyectos') && observer.observe(document.querySelector('.filtros-proyectos'));
+            document.querySelector('.contact-content') && observer.observe(document.querySelector('.contact-content'));
+            
+            // Activar animaciones para elementos ya visibles al cargar
+            setTimeout(() => {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        });
+
+        // Filtrado de proyectos con animaciones
         document.querySelectorAll('.filtro-btn').forEach(button => {
             button.addEventListener('click', function() {
                 // Remover clase active de todos los botones
@@ -509,17 +761,29 @@
                 // Obtener la categoría a filtrar
                 const categoria = this.getAttribute('data-categoria');
                 
-                // Mostrar/ocultar proyectos según la categoría
+                // Animación de filtrado
                 document.querySelectorAll('.proyecto-card').forEach(proyecto => {
-                    if (categoria === 'todos' || proyecto.getAttribute('data-categoria') === categoria) {
+                    const proyectoCategoria = proyecto.getAttribute('data-categoria');
+                    
+                    if (categoria === 'todos' || proyectoCategoria === categoria) {
+                        // Proyecto debe mostrarse
+                        proyecto.classList.remove('filtered-out');
+                        proyecto.classList.add('filtered-in');
                         proyecto.style.display = 'block';
                     } else {
-                        proyecto.style.display = 'none';
+                        // Proyecto debe ocultarse
+                        proyecto.classList.remove('filtered-in');
+                        proyecto.classList.add('filtered-out');
+                        
+                        // Ocultar después de la animación
+                        setTimeout(() => {
+                            proyecto.style.display = 'none';
+                        }, 500);
                     }
                 });
             });
         });
-        
-</script>
-<script src="app.js"></script>
+    </script>
+    <script src="app.js"></script>
+</body>
 </html>

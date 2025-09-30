@@ -1,13 +1,18 @@
 
 :root {
-    --color-primary: #8B4513; /* Color madera principal */
+    --color-primary: #7a3e11; /* Color madera principal */
     --color-secondary: #D2B48C; /* Color madera claro */
     --color-neutral: #F5F5F5; /* Fondo claro */
     --color-text: #333333; /* Texto principal */
-    --color-accent: #A0522D; /* Acento madera oscuro */
+    --color-accent: #5d2906; /* Acento madera oscuro */
     --color-btn: #800000; /*Color para botones */
     --color-icon: #63310D; /*Color para los iconos */
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+a{
+    text-decoration: none;
 }
 
 * {
@@ -57,6 +62,7 @@ header {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--color-secondary);
+    text-decoration: none;
 }
 
 .nav-links {
@@ -114,7 +120,7 @@ padding-top: 5px;
 }
 
 .btn-readmore{
-    margin-left: 30%;
+    margin-left: 15%;
 }
 
 .btn {
@@ -130,6 +136,7 @@ padding-top: 5px;
 
 .btn:hover {
     background-color: #c01f1f;
+    color: white;
 }
 
 .btn-secondary {
@@ -486,7 +493,7 @@ padding-top: 5px;
 
 /* Footer */
 footer {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: white;
     padding: 4rem 0 1rem;
 }
@@ -554,10 +561,6 @@ footer {
     text-decoration: none
 }
 
-.social-icons a:hover {
-    background-color: var(--color-secondary);
-    transform: translateY(-3px);
-}
 
 .copyright {
     text-align: center;
@@ -566,6 +569,165 @@ footer {
     font-size: 0.9rem;
     color: #ddd;
 }
+
+.contact-item:hover .contact-icon {
+    transform: scale(1.1);
+    background-color: var(--color-primary);
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px) rotate(5deg);
+}
+
+/* Animación para botones */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Efecto de onda en botones */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.btn:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+            
+/* Animación para el botón de menú móvil */
+.mobile-menu-btn {
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-btn.active {
+    transform: rotate(90deg);
+}
+
+/* Animación para el header al hacer scroll */
+header {
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(139, 69, 19, 0.95);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/*Animacion para el logo*/
+            
+.logo {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    color: var(--color-secondary);
+}
+/* Animación para enlaces de navegación */
+.nav-links a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-secondary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+/* Animación para el mapa */
+.map-visual {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease;
+}
+
+.map-visual.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Efecto de brillo para el mapa */
+.map-visual::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: left 0.8s ease;
+    z-index: 1;
+}
+
+.map-visual:hover::before {
+    left: 100%;
+}
+
+
+/* Animación para la información de contacto */
+.contact-info-section {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.6s ease;
+}
+
+.contact-info-section.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Efecto de scroll suave para navegación interna */
+html {
+    scroll-behavior: smooth;
+}
+
+
 
 /* Responsive */
 

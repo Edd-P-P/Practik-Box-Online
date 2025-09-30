@@ -15,15 +15,77 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="icon" href="Imagenes/Index/icon.png" type="image/png">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
+        <style>
+            /* ANIMACIONES */
+            
+            /* Animación de entrada para elementos */
+            .fade-in {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            
+            .fade-in.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Animación para tarjetas al hacer hover */
+            .category-card, .step {
+                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+            
+            .category-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            }
+    
+            /* Animación para iconos */
+            .step-icon, .contact-icon, .social-icons a {
+                transition: all 0.3s ease;
+            }
+            
+            .step:hover .step-icon {
+                transform: scale(1.1) rotate(5deg);
+            }
+             
+            /* Animación de carga para imágenes */
+            .intro-image img, .category-img {
+                transition: transform 0.5s ease, opacity 0.5s ease;
+            }
+            
+            .intro-image:hover img {
+                transform: scale(1.03);
+            }
+    
+            /* Animación para elementos del proceso */
+            .process-steps .step {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 0.2s ease;
+            }
+            
+            .process-steps .step.animated {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* Retrasos escalonados para animaciones */
+            .step:nth-child(1) { transition-delay: 0.1s; }
+            .step:nth-child(2) { transition-delay: 0.2s; }
+            .step:nth-child(3) { transition-delay: 0.3s; }
+            .step:nth-child(4) { transition-delay: 0.4s; }
+        </style>
+    </head> 
     <body>
      <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">PRACTIK-BOX</div>
+                <a href="index.html"><div class="logo">PRACTIK-BOX</div></a>
                 <button class="mobile-menu-btn">☰</button>
                 <ul class="nav-links">
                     <li><a href="index.html">INICIO</a></li>
@@ -40,10 +102,12 @@
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
-                <h1>Diseños personalizados en madera</h1>
-                <p>Artesanías de calidad que transforman tus espacios con muebles únicos y accesorios exclusivos.</p>
-                <a href="Productos.html" class="btn">Ver Productos</a>
-                <a href="proceso.html" class="btn btn-secondary">Solicitar Cotización</a>
+                <h1 class="fade-in">Diseños personalizados en madera</h1>
+                <p class="fade-in">Artesanías de calidad que transforman tus espacios con muebles únicos y accesorios exclusivos.</p>
+                <div class="fade-in">
+                    <a href="Productos.html" class="btn">Ver Productos</a>
+                    <a href="proceso.html" class="btn btn-secondary">Solicitar Cotización</a>
+                </div>
             </div>
         </div>
     </section>
@@ -52,7 +116,7 @@
     <section class="section intro-section" id="nosotros">
         <div class="container">
             <div class="intro-content">
-                <div class="intro-text">
+                <div class="intro-text fade-in">
                     <h2>¿Quienes somos?</h2>
                     <p>Somos especialistas en crear muebles únicos que se adaptan a tus necesidades y espacios. Cada pieza es fabricada con madera de la más alta calidad y con un diseño pensado para durar. Nuestra pasión por la artesanía se refleja en cada detalle de nuestros productos.</p>
                     
@@ -66,31 +130,31 @@
                     
                     <p>Desde la concepción del diseño hasta el acabado final, cada etapa del proceso es supervisada meticulosamente por nuestros expertos, garantizando que el resultado final supere sus expectativas y se convierta en un tesoro familiar.</p>
                 </div>
-                <div class="intro-image">
+                <div class="intro-image fade-in">
                     <img src="Imagenes/Index/Introduction-image.jpg" alt="Gabinete">
                 </div>
             </div>
         </div>
     </section>
-        <a href="Nosotros.html" class="btn btn-readmore">Leer mas...</a>
+        <a href="Nosotros.html" class="btn btn-readmore fade-in">Leer mas...</a>
 
     <!-- Categorías principales -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fade-in">
                 <h2>Nuestros productos.</h2>
             </div>
             <div class="categories">
-                <div class="category-card">
-                    <div class="category-img" style="background-image: url('');"></div>
+                <div class="category-card fade-in">
+                    <div class="category-img" style="background-image: url('Imagenes/Index/muebles personalizados.png');"></div>
                     <div class="category-content">
                         <h3>Muebles Personalizados</h3>
                         <p>Diseñamos y fabricamos muebles a medida para tu hogar o negocio. Desde closets y cocinas hasta muebles para baño y repizas.</p>
                         <a href="proceso.html" class="btn">Cotizar</a>
                     </div>
                 </div>
-                <div class="category-card">
-                    <div class="category-img" style="background-image: url('');"></div>
+                <div class="category-card fade-in">
+                    <div class="category-img" style="background-image: url('Imagenes/Index/Accesorios.png');"></div>
                     <div class="category-content">
                         <h3>Accesorios</h3>
                         <p>Productos únicos de venta directa para decorar y organizar tu espacio. Cajas de té, servilleteros y más.</p>
@@ -104,7 +168,7 @@
    <!-- Proceso simplificado -->
     <section class="process">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fade-in">
                 <h2>¿Cómo funciona?</h2>
             </div>
             <div class="process-steps">
@@ -279,6 +343,63 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+
+        <script>   
+
+            // Animación de elementos al hacer scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const steps = document.querySelectorAll('.process-steps .step');
+            const mapVisual = document.querySelector('.map-visual');
+            const contactInfo = document.querySelector('.contact-info-section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Animación escalonada para los pasos del proceso
+                        if (entry.target.classList.contains('process-steps')) {
+                            steps.forEach((step, index) => {
+                                setTimeout(() => {
+                                    step.classList.add('animated');
+                                }, index * 200);
+                            });
+                        }
+                        
+                        // Animación para el mapa y la información de contacto
+                        if (entry.target.classList.contains('contact-content')) {
+                            setTimeout(() => {
+                                if (mapVisual) mapVisual.classList.add('animated');
+                            }, 300);
+                            
+                            setTimeout(() => {
+                                if (contactInfo) contactInfo.classList.add('animated');
+                            }, 600);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            fadeElements.forEach(el => observer.observe(el));
+            document.querySelector('.process-steps') && observer.observe(document.querySelector('.process-steps'));
+            document.querySelector('.contact-content') && observer.observe(document.querySelector('.contact-content'));
+            
+            // Activar animaciones para elementos ya visibles al cargar
+            setTimeout(() => {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+        </script>
 
         <script src="app.js"></script>
     </body>

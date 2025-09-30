@@ -219,6 +219,131 @@
             color: var(--color-neutral)
         } 
 
+        /* ANIMACIONES*/
+        
+        /* Animaciones de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Animación para hero */
+        .hero-nosotros .hero-content {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Animación escalonada para pasos del proceso */
+        .proceso-paso {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .proceso-paso:nth-child(even) {
+            transform: translateX(50px);
+        }
+        
+        .proceso-paso.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Animación para números del proceso */
+        .proceso-numero {
+            transition: all 0.3s ease;
+        }
+        
+        .proceso-paso:hover .proceso-numero {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--color-btn);
+        }
+        
+        /* Animación para tarjetas de misión/visión */
+        .mv-card {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .mv-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mv-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Animación para iconos de misión/visión */
+        .mv-icon {
+            transition: all 0.4s ease;
+        }
+        
+        .mv-card:hover .mv-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Animación para valores */
+        .valor-card {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+        
+        .valor-card.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .valor-card:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+        
+        /* Animación para iconos de valores */
+        .valor-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .valor-card:hover .valor-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        /* Animación para títulos de sección */
+        .section-title h2 {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--color-primary);
+            transition: width 0.8s ease;
+        }
+        
+        .section-title.animated h2::after {
+            width: 100%;
+        }
         /* Responsive */
         @media (max-width: 968px) {
             .historia-content {
@@ -242,36 +367,6 @@
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-                padding: 1rem 0;
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0;
-                border-bottom: 1px solid #eee;
-            }
-            
-            .nav-links a {
-                display: block;
-                padding: 1rem 2rem;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
             .hero-nosotros h1 {
                 font-size: 2.5rem;
             }
@@ -283,6 +378,15 @@
             .mv-card {
                 padding: 2rem;
             }
+            
+            /* Ajustes para animaciones en móvil */
+            .map-visual {
+                transform: translateY(30px) scale(0.95);
+            }
+            
+            .contact-info-section {
+                transform: translateY(30px) scale(0.95);
+            }
         }
 
     </style>
@@ -291,7 +395,7 @@
      <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">PRACTIK-BOX</div>
+                <a href="index.html"><div class="logo">PRACTIK-BOX</div></a>
                 <button class="mobile-menu-btn">☰</button>
                 <ul class="nav-links">
                     <li><a href="index.html">INICIO</a></li>
@@ -317,7 +421,7 @@
 <!-- Nuestro Proceso -->
 <section class="section proceso-section">
     <div class="container">
-        <div class="section-title">
+        <div class="section-title fade-in">
             <h2>Nuestro proceso artesanal.</h2>
             <p>Desde la selección de la madera hasta el acabado final, cada paso es realizado con dedicación y maestría.</p>
         </div>
@@ -372,7 +476,7 @@
    <!-- Misión y Visión -->
     <section class="section mision-vision">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fade-in">
                 <h2>Nuestra misión y visión.</h2>
             </div>
             <div class="mv-container">
@@ -398,7 +502,7 @@
     <!-- Nuestros Valores -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title fade-in">
                 <h2>Nuestros valores fundamentales.</h2>
                 <p>Principios que guían cada aspecto de nuestro trabajo.</p>
             </div>
@@ -571,20 +675,105 @@
             </div>
         </div>
     </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+    ></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"
+    ></script>
+
+    <script>
+            // Animación de elementos al hacer scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const procesoPasos = document.querySelectorAll('.proceso-paso');
+            const mvCards = document.querySelectorAll('.mv-card');
+            const valorCards = document.querySelectorAll('.valor-card');
+            const sectionTitles = document.querySelectorAll('.section-title');
+            const mapVisual = document.querySelector('.map-visual');
+            const contactInfo = document.querySelector('.contact-info-section');
+            const contactItems = document.querySelectorAll('.contact-item');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Animación escalonada para los pasos del proceso
+                        if (entry.target.classList.contains('proceso-container')) {
+                            procesoPasos.forEach((paso, index) => {
+                                setTimeout(() => {
+                                    paso.classList.add('animated');
+                                }, index * 300);
+                            });
+                        }
+                        
+                        // Animación para misión y visión
+                        if (entry.target.classList.contains('mv-container')) {
+                            mvCards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.classList.add('animated');
+                                }, index * 200);
+                            });
+                        }
+                        
+                        // Animación para valores
+                        if (entry.target.classList.contains('valores-grid')) {
+                            valorCards.forEach((card, index) => {
+                                setTimeout(() => {
+                                    card.classList.add('animated');
+                                }, index * 150);
+                            });
+                        }
+                        
+                        // Animación para títulos de sección
+                        if (entry.target.classList.contains('section-title')) {
+                            entry.target.classList.add('animated');
+                        }
+                        
+                        // Animación para mapa y contacto
+                        if (entry.target.classList.contains('contact-content')) {
+                            setTimeout(() => {
+                                if (mapVisual) mapVisual.classList.add('animated');
+                            }, 300);
+
+                            setTimeout(() => {
+                                if (contactInfo) contactInfo.classList.add('animated');
+                            }, 600);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            fadeElements.forEach(el => observer.observe(el));
+            document.querySelector('.proceso-container') && observer.observe(document.querySelector('.proceso-container'));
+            document.querySelector('.mv-container') && observer.observe(document.querySelector('.mv-container'));
+            document.querySelector('.valores-grid') && observer.observe(document.querySelector('.valores-grid'));
+            sectionTitles.forEach(title => observer.observe(title));
+            document.querySelector('.contact-content') && observer.observe(document.querySelector('.contact-content'));
+            
+            // Activar animaciones para elementos ya visibles al cargar
+            setTimeout(() => {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100);
+    </script>
+    <script src="app.js"></script>
 </body>
-
-<!-- Bootstrap JavaScript Libraries -->
-<script
-    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"
-></script>
-
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"
-></script>
-
-<script src="app.js"></script>
 </html>
