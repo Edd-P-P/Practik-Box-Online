@@ -194,59 +194,7 @@
             font-size: 1.1rem;
             border-color: var(--color-neutral);
         }
-        
-        /* Guía de estilos */
-        .guia-estilos {
-            background: white;
-        }
-        
-        .estilos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .estilo-card {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .estilo-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .estilo-img {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .estilo-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .estilo-card:hover .estilo-img img {
-            transform: scale(1.1);
-        }
-        
-        .estilo-content {
-            padding: 1.5rem;
-        }
-        
-        .estilo-content h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-        
-        .estilo-content p {
-            line-height: 1.6;
-            text-align: justify;
-        }
-        
+            
         /* Tipos de madera */
         .maderas-grid {
             display: grid;
@@ -784,85 +732,45 @@
         </div>
     </section>
 
-    <!-- Guía de estilos -->
-    <section class="section guia-estilos">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Guía de estilos.</h2>
-                <p>Inspírate con nuestros estilos de diseño más populares.</p>
+    <section>
+        <div class="section-title fade-in" style="margin-top: 4rem;">
+            <h2>Materiales disponibles.</h2>
+        </div>
+        
+        <div class="maderas-grid">
+            <div class="madera-card">
+                <div class="madera-img">
+                    <img src="Imagenes/Proceso/roble-proceso.jpeg" alt="Roble">
+                </div>
+                <h3>Roble</h3>
+                <p>Durabilidad excepcional y vetas pronunciadas. Ideal para muebles que requieren resistencia.</p>
             </div>
             
-            <div class="estilos-grid">
-                <div class="estilo-card">
-                    <div class="estilo-img">
-                        <img src="Imagenes/Proceso/moderno-proceso.png" alt="Estilo moderno">
-                    </div>
-                    <div class="estilo-content">
-                        <h3>Estilo moderno</h3>
-                        <p>Líneas limpias, superficies lisas y funcionalidad. Utilizamos materiales como MDF lacado, melamina y maderas claras con acabados minimalistas.</p>
-                    </div>
+            <div class="madera-card">
+                <div class="madera-img">
+                    <img src="Imagenes/Proceso/nogal-proceso.jpeg" alt="Nogal">
                 </div>
-                
-                <div class="estilo-card">
-                    <div class="estilo-img">
-                        <img src="Imagenes/Proceso/rustico-proceso.png" alt="Estilo rústico">
-                    </div>
-                    <div class="estilo-content">
-                        <h3>Estilo rústico</h3>
-                        <p>Texturas naturales, maderas envejecidas y detalles artesanales. Ideal para espacios cálidos y acogedores. Usamos maderas como pino, roble y cedro.</p>
-                    </div>
-                </div>
-                
-                <div class="estilo-card">
-                    <div class="estilo-img">
-                        <img src="Imagenes/Proceso/minimalista-proceso.png" alt="Estilo minimalista">
-                    </div>
-                    <div class="estilo-content">
-                        <h3>Estilo minimalista</h3>
-                        <p>Menos es más. Diseños simples, funcionales y sin elementos superfluos. Enfoque en la esencia y practicidad del mueble.</p>
-                    </div>
-                </div>
+                <h3>Nogal</h3>
+                <p>Color oscuro y elegante, perfecto para piezas de alto valor estético.</p>
             </div>
             
-            <div class="section-title fade-in" style="margin-top: 4rem;">
-                <h2>Tipos de madera disponibles.</h2>
-                <p>Selecciona la madera que mejor se adapte a tu proyecto.</p>
+            <div class="madera-card">
+                <div class="madera-img">
+                    <img src="Imagenes/Proceso/cerezo-proceso.jpeg" alt="Cerezo">
+                </div>
+                <h3>Cerezo</h3>
+                <p>Tono cálido y rojizo que se oscurece con el tiempo, añadiendo carácter.</p>
             </div>
             
-            <div class="maderas-grid">
-                <div class="madera-card">
-                    <div class="madera-img">
-                        <img src="Imagenes/Proceso/roble-proceso.jpeg" alt="Roble">
-                    </div>
-                    <h3>Roble</h3>
-                    <p>Durabilidad excepcional y vetas pronunciadas. Ideal para muebles que requieren resistencia.</p>
+            <div class="madera-card">
+                <div class="madera-img">
+                    <img src="Imagenes/Proceso/pino-proceso.jpeg" alt="Pino">
                 </div>
-                
-                <div class="madera-card">
-                    <div class="madera-img">
-                        <img src="Imagenes/Proceso/nogal-proceso.jpeg" alt="Nogal">
-                    </div>
-                    <h3>Nogal</h3>
-                    <p>Color oscuro y elegante, perfecto para piezas de alto valor estético.</p>
-                </div>
-                
-                <div class="madera-card">
-                    <div class="madera-img">
-                        <img src="Imagenes/Proceso/cerezo-proceso.jpeg" alt="Cerezo">
-                    </div>
-                    <h3>Cerezo</h3>
-                    <p>Tono cálido y rojizo que se oscurece con el tiempo, añadiendo carácter.</p>
-                </div>
-                
-                <div class="madera-card">
-                    <div class="madera-img">
-                        <img src="Imagenes/Proceso/pino-proceso.jpeg" alt="Pino">
-                    </div>
-                    <h3>Pino</h3>
-                    <p>Madera clara y económica, ideal para proyectos con presupuesto ajustado.</p>
-                </div>
+                <h3>Pino</h3>
+                <p>Madera clara y económica, ideal para proyectos con presupuesto ajustado.</p>
             </div>
         </div>
+    </div>
     </section>
 
     <!-- Preguntas frecuentes -->
@@ -890,7 +798,8 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>No, la cotización inicial es completamente gratuita. Solo si requieres planos detallados o maquetas en 3D podría haber un costo, que será informado previamente.</p>
+                        <p>No, la cotización inicial es completamente gratuita.<br> 
+                            Si requieres planos detallados o maquetas en 3D tendrá un costo adicional, que será informado previamente.</p>
                     </div>
                 </div>
                 
@@ -900,7 +809,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Sí, puedes solicitar ajustes en materiales, dimensiones o diseño. Revisaremos los cambios y emitiremos una nueva cotización sin costo adicional.</p>
+                        <p>Sí, puedes solicitar ajustes en materiales, dimensiones o diseño. Revisaremos los cambios y emitiremos una cotización más sin costo adicional.</p>
                     </div>
                 </div>
                 
@@ -910,17 +819,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Nuestras cotizaciones detallan: costos de materiales, mano de obra, tiempo de fabricación, fecha estimada de entrega, y condiciones de garantía. También incluimos un boceto del diseño propuesto.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Ofrecen servicio de instalación?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sí, incluimos servicio de instalación profesional en la cotización. Nuestro equipo se encarga del montaje y colocación final del mueble en tu espacio.</p>
+                        <p>Nuestras cotizaciones detallan: Fecha estimada de entrega, condiciones de garantia, especificaciones del pedido, presupuesto final.</p>
                     </div>
                 </div>
             </div>

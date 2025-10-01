@@ -2,7 +2,7 @@
 :root {
     --color-primary: #7a3e11; /* Color madera principal */
     --color-secondary: #D2B48C; /* Color madera claro */
-    --color-neutral: #F5F5F5; /* Fondo claro */
+    --color-neutral: #F8F8F8; /* Fondo claro */
     --color-text: #333333; /* Texto principal */
     --color-accent: #5d2906; /* Acento madera oscuro */
     --color-btn: #800000; /*Color para botones */
@@ -31,7 +31,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 1rem;
-    color: #63310D;
+    color: #7a3e11;
 }
 
 
@@ -433,7 +433,7 @@ padding-top: 5px;
 
 .contact-info-section h3 {
     font-size: 1.8rem;
-    color: #63310D;
+    color: var(--color-icon);
     margin-bottom: 25px;
     padding-bottom: 15px;
     border-bottom: 3px solid var(--color-btn);
@@ -464,13 +464,13 @@ padding-top: 5px;
 .contact-text h4,
 .contact-whatsapp h4 {
   font-size: 1.2rem;
-  color: #63310D;
+  color: var(--color-icon);
   margin: 0 0 5px 0;
 }
 
 .contact-text p,
 .contact-whatsapp p {
-  color: var(--dark, #333);
+  color: #333;
   margin: 0;
   line-height: 1.6;
   text-decoration: none;
@@ -479,7 +479,7 @@ padding-top: 5px;
 
 .contact-text a,
 .contact-whatsapp a {
-  color: var(--dark, #333);
+  color:  #333;
   margin: 0;
   line-height: 1.6;
   text-decoration: none;
@@ -640,7 +640,7 @@ header {
 }
 
 header.scrolled {
-    background-color: rgba(139, 69, 19, 0.95);
+    background-color: rgba(122, 62, 17, 0.95);
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
