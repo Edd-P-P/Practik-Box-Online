@@ -142,18 +142,15 @@
             background: #c01f1f;
             border-color: var(--color-btn);
         }
-        
-        /* Sección de muebles personalizados */
-        .muebles-personalizados {
-            background-color: var(--color-light);
-        }
-        
-        .categorias-muebles {
+
+       /* LISTA DE PRODUCTOS */
+        .productos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
-        
+
         .categoria-mueble {
             background: white;
             border-radius: 10px;
@@ -161,6 +158,14 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s;
             text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .categoria-mueble.animated {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
         }
         
         .categoria-mueble:hover {
@@ -189,13 +194,16 @@
         
         .categoria-content h3 {
             margin-bottom: 1rem;
+            color: var(--color-primary);
         }
 
         .categoria-content p {
             text-align: justify;
             padding-bottom: 10px;
             color: var(--color-text);
+            margin-bottom: 1rem;
         }
+
 
         /* ANIMACIONES  */
         
@@ -245,24 +253,7 @@
         .section-title.animated h2::after {
             width: 100%;
         }
-        
-        /* Animación para categorías de muebles */
-        .categoria-mueble {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-            transition: all 0.6s ease;
-        }
-        
-        .categoria-mueble.animated {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        
-        .categoria-mueble:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
+ 
         /* Animación para items de información */
         .info-item {
             opacity: 0;
@@ -350,7 +341,7 @@
     </header>
 
     <!-- Hero Section para Productos -->
-    <section class="hero-productos">
+    <section class="hero-productos" id="hero-productos">
         <div class="container">
             <div class="hero-content-productos">
                 <h1>Nuestros productos en madera</h1>
@@ -359,119 +350,22 @@
         </div>
     </section>
 
-    <!-- Sección de Muebles Personalizados -->
-    <section class="section muebles-personalizados">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Productos personalizados.</h2>
-                <p>Diseñamos y fabricamos muebles y accesorios para tu hogar o negocio.</p>
-            </div>
-            
-            <div class="categorias-muebles">
-                <!-- Categoría 1 -->
-                <div class="categoria-mueble">
-                    <div class="categoria-img">
-                        <img src="Imagenes/Productos/Closets y Vestidores.jpg" alt="Closets y vestidores">
-                    </div>
-                    <div class="categoria-content">
-                        <h3>Closets y vestidores</h3>
-                        <p>Diseños optimizados para maximizar el espacio de almacenamiento.</p>
-                        <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div>
-                </div>
-                
-                <!-- Categoría 2 -->
-                <div class="categoria-mueble">
-                    <div class="categoria-img">
-                        <img src="Imagenes/Productos/Muebles de cocina.jpg" alt="Muebles de cocina">
-                    </div>
-                    <div class="categoria-content">
-                        <h3>Muebles de cocina</h3>
-                        <p>Cocinas funcionales y estéticas adaptadas a tus necesidades.</p>
-                        <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div>
-                </div>
-                
-                <!-- Categoría 3 -->
-                <div class="categoria-mueble">
-                    <div class="categoria-img">
-                        <img src="Imagenes/Productos/Mueble de baño.jpg" alt="Muebles de baño">
-                    </div>
-                    <div class="categoria-content">
-                        <h3>Muebles de baño</h3>
-                        <p>Muebles resistentes a la humedad con diseños modernos.</p>
-                        <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div>
-                </div>
-                
-                <!-- Categoría 4 -->
-                <div class="categoria-mueble">
-                    <div class="categoria-img">
-                        <img src="Imagenes/Productos/Repisa.jpg" alt="repisas">
-                    </div>
-                    <div class="categoria-content">
-                        <h3>Repisas</h3>
-                        <p>Soluciones creativas para organizar y exhibir tus libros y objetos.</p>
-                        <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div>
-                </div>
-
-                <!-- Categoría 5 -->
-                <div class="categoria-mueble">
-                    <div class="categoria-img">
-                        <img src="Imagenes/Productos/Armarios Altos.jpeg" alt="Armarios">
-                    </div>
-                    <div class="categoria-content">
-                        <h3>Armarios.</h3>
-                        <p>Ideales para organizar ropa, calzado y accesorios con estilo y orden.</p>
-                        <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div>
-                </div>
-                
-                <!-- Categoría 6 -->
-                <div class="categoria-mueble">
-                    <div class="categoria-img">
-                        <img src="Imagenes/Productos/Escritorio.jpg" alt="Escritorio">
-                    </div>
-                    <div class="categoria-content">
-                        <h3>Muebles de oficina</h3>
-                        <p>Escritorios amplios, gabinetes con cajones inteligentes y estanterías modulares que optimizan el espacio sin sacrificar estilo.</p>
-                        <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div>
-                </div>               
-
-
-                <!-- Categoría 7 -->
-                <div class="categoria-mueble">
-                    <div class="categoria-img">
-                        <img src="Imagenes/Productos/pergola.jpg" alt="pergola">
-                    </div>
-                    <div class="categoria-content">
-                        <h3>Pergola</h3>
-                        <p>Estructura resistente y estética, fabricada en madera tratada para exteriores. Ideal para sombrear terrazas, jardines o patios.</p>
-                        <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div>
-                </div>
-                
-                
-                <!-- Categoría 8 -->
-               <div class="categoria-mueble">
-                   <a href="accesorios.html"><div class="categoria-img">
-                        <img src="Imagenes/Index/Accesorios.png" alt="Accesorios">
-                    </div>
-                    <div class="categoria-content">
-                        <h3>Accesorios.</h3>
-                        <p>Productos únicos de venta directa para decorar y organizar tu espacio. Cajas de té, tablas de queso y más.</p>
-                        <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div></a>
-            </div>
-            
+    <div class="container">
+        <!-- Lista de productos -->
+        <div id="lista-productos" class="productos-grid">
+            <!-- Los productos se cargarán dinámicamente con JavaScript -->
         </div>
-    </section>
+    </div>
+
+    <!-- CONTENEDOR PARA DETALLES DEL PRODUCTO-->
+    <div id="detalles-producto" style="display: none;">
+        <!-- Los detalles del producto se cargarán dinámicamente -->
+    </div>
+
 
     <!-- Información adicional -->
     <section class="section">
-        <div class="container">
+        <div class="container" id="info-extra">
             <div class="info-extra">
                 <h2 class="fade-in">¿Por qué elegir nuestros productos?</h2>
                 <div class="info-grid">
@@ -641,6 +535,7 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"
     ></script>
+    <script src="database.js"></script>
 
     <script>
 
@@ -718,7 +613,8 @@
                     }
                 });
             }, observerOptions);
-            
+
+        
             // Observar elementos para animaciones
             fadeElements.forEach(el => observer.observe(el));
             sectionTitles.forEach(title => observer.observe(title));
@@ -738,7 +634,135 @@
                 });
             }, 100)
     </script>
+    <script>
+        // CARGAR LISTA DE PRODUCTOS AL INICIAR
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarListaProductos();
+            
+            // Verificar si hay un producto en la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const idProducto = urlParams.get('producto');
+            if (idProducto) {
+                cargarProducto(idProducto);
+            }
 
+            // Configurar animaciones
+            configurarAnimaciones();
+        });
+
+        // CARGAR LISTA DE PRODUCTOS
+        function cargarListaProductos() {
+            const contenedor = document.getElementById('lista-productos');
+            contenedor.innerHTML = '';
+            
+            Object.keys(productos).forEach(id => {
+                const producto = productos[id];
+                const productoElement = document.createElement('div');
+                productoElement.className = 'categoria-mueble fade-in';
+                
+                // Determinar el botón según el ID
+                const botonHTML = id === '8' 
+                    ? `<a href="accesorios.html" class="btn btn-outline">Ver accesorios</a>`
+                    : `<button class="btn btn-outline" onclick="cargarProducto(${id})">Ver detalles</button>`;
+                
+                productoElement.innerHTML = `
+                    <div class="categoria-img">
+                        <img src="${producto.imagenes[0]}" alt="${producto.nombre}">
+                    </div>
+                    <div class="categoria-content">
+                        <h3>${producto.nombre}</h3>
+                        <p>${producto.descripcion}</p>
+                        ${botonHTML}
+                    </div>
+                `;
+                contenedor.appendChild(productoElement);
+            });
+        }
+
+// CARGAR DETALLES DEL PRODUCTO
+            function cargarProducto(id) {
+                const producto = productos[id];
+                if (!producto) return;
+                
+                // Actualizar URL
+                history.pushState({}, '', `?producto=${id}`);
+                
+                // Ocultar elementos y mostrar detalles
+                document.getElementById('lista-productos').style.display = 'none';
+                document.getElementById('hero-productos').style.display = 'none';
+                document.getElementById('info-extra').style.display = 'none';
+                
+                const contenedorDetalles = document.getElementById('detalles-producto');
+                contenedorDetalles.style.display = 'block';
+
+                // Generar contenido del producto
+                let contenidoHTML = `
+                    <div class="detalles-header">
+                        <h2>${producto.nombre}</h2>
+                        <button class="btn-volver" onclick="volverALista()">← Volver a Productos</button>
+                    </div>
+                `;
+                
+                contenedorDetalles.innerHTML = contenidoHTML;
+            }
+
+            // VOLVER A LA LISTA
+            function volverALista() {
+                // Limpiar parámetro de URL
+                history.pushState({}, '', window.location.pathname);
+                
+                // Ocultar detalles y mostrar lista
+                document.getElementById('detalles-producto').style.display = 'none';
+                document.getElementById('lista-productos').style.display = 'grid';
+                document.getElementById('hero-productos').style.display = 'flex';
+                document.getElementById('info-extra').style.display = 'block';
+            }
+
+
+
+        // CONFIGURAR ANIMACIONES
+        function configurarAnimaciones() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const infoItems = document.querySelectorAll('.info-item');
+            const productoCards = document.querySelectorAll('.categoria-mueble');
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Animación escalonada para productos
+                        if (entry.target.classList.contains('productos-grid')) {
+                            productoCards.forEach((producto, index) => {
+                                setTimeout(() => {
+                                    producto.classList.add('animated');
+                                }, index * 150);
+                            });
+                        }
+                        
+                        // Animación para items de información
+                        if (entry.target.classList.contains('info-grid')) {
+                            infoItems.forEach((item, index) => {
+                                setTimeout(() => {
+                                    item.classList.add('animated');
+                                }, index * 100);
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            fadeElements.forEach(el => observer.observe(el));
+            document.querySelector('.productos-grid') && observer.observe(document.querySelector('.productos-grid'));
+            document.querySelector('.info-grid') && observer.observe(document.querySelector('.info-grid'));
+        }        
+    </script>
     <script src="app.js"></script>
 </body>
 </html>
