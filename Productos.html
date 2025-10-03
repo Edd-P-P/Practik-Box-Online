@@ -100,67 +100,7 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
-        /* Grid de productos */
-        .productos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .producto-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .producto-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .producto-img {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .producto-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .producto-card:hover .producto-img img {
-            transform: scale(1.1);
-        }
-        
-        .producto-content {
-            padding: 1.5rem;
-        }
-        
-        .producto-content h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-        
-        .producto-categoria {
-            display: inline-block;
-            background: var(--color-light);
-            color: var(--color-accent);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .producto-desc {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
+
         .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
@@ -254,32 +194,9 @@
         .categoria-content p {
             text-align: justify;
             padding-bottom: 10px;
+            color: var(--color-text);
         }
-        
-        /* Banner de tienda */
-        .tienda-banner {
-            background: #fdf7eb;
-            color: var(--color-primary);
-            padding: 4rem 2rem;
-            border-radius: 10px;
-            text-align: center;
-            margin: 3rem 0;
-        }
-        
-        .tienda-banner h2 {
-            color: var(--color-primary);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tienda-banner p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
+
         /* ANIMACIONES  */
         
         /* Animaciones de entrada */
@@ -346,51 +263,6 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         
-        /* Animación para productos */
-        .producto-card {
-            opacity: 0;
-            transform: translateY(30px) rotateX(10deg);
-            transition: all 0.6s ease;
-        }
-        
-        .producto-card.animated {
-            opacity: 1;
-            transform: translateY(0) rotateX(0);
-        }
-        
-        .producto-card:hover {
-            transform: translateY(-10px) rotateX(0);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-        
-        /* Animación para etiquetas de categoría */
-        .producto-categoria {
-            transition: all 0.3s ease;
-        }
-        
-        .producto-card:hover .producto-categoria {
-            transform: scale(1.1);
-            background: var(--color-primary);
-            color: white;
-        }
-        
-        /* Animación para banner de tienda */
-        .tienda-banner {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.8s ease;
-        }
-        
-        .tienda-banner.animated {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        .tienda-banner:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
         /* Animación para items de información */
         .info-item {
             opacity: 0;
@@ -414,34 +286,6 @@
         
         .info-item:hover .info-icon {
             transform: scale(1.2) rotate(10deg);
-        }
-        
-        /* Animación para imágenes de productos */
-        .producto-img, .categoria-img {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .producto-img::before, .categoria-img::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.4),
-                transparent
-            );
-            transition: left 0.8s ease;
-            z-index: 1;
-        }
-        
-        .producto-card:hover .producto-img::before,
-        .categoria-mueble:hover .categoria-img::before {
-            left: 100%;
         }
 
         /* Responsive */
@@ -520,7 +364,7 @@
         <div class="container">
             <div class="section-title fade-in">
                 <h2>Productos personalizados.</h2>
-                <p>Diseñamos y fabricamos muebles a medida para tu hogar o negocio.</p>
+                <p>Diseñamos y fabricamos muebles y accesorios para tu hogar o negocio.</p>
             </div>
             
             <div class="categorias-muebles">
@@ -611,156 +455,17 @@
                 
                 
                 <!-- Categoría 8 -->
-                <div class="categoria-mueble">
-                    <div class="categoria-img">
+               <div class="categoria-mueble">
+                   <a href="accesorios.html"><div class="categoria-img">
                         <img src="Imagenes/Index/Accesorios.png" alt="Accesorios">
                     </div>
                     <div class="categoria-content">
                         <h3>Accesorios.</h3>
                         <p>Productos únicos de venta directa para decorar y organizar tu espacio. Cajas de té, tablas de queso y más.</p>
                         <a href="proceso.html" class="btn btn-outline">Solicitar Cotización</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección de Accesorios (Catálogo) -->
-    <section class="section">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Accesorios de madera</h2>
-                <p>Productos únicos para decorar y organizar tu espacio.</p>
+                    </div></a>
             </div>
             
-            <!-- Grid de productos -->
-            <div class="productos-grid">
-                <!-- Producto 1 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="" alt="Caja de té de madera">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">Cajas de Té</span>
-                        <h3>Caja de té</h3>
-                        <p class="producto-desc">Hermosa caja de madera con divisores internos para organizar tus tés favoritos. Acabado natural que realza la veta de la madera.</p>
-                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>
-                
-                <!-- Producto 2 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="Imagenes/Productos/Tablas para queso.png" alt="Tablas para quesos">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">Tablas</span>
-                        <h3>Tablas para queso </h3>
-                        <p class="producto-desc">Descubre la elegancia natural de nuestras tablas: una fusión perfecta de diseño, funcionalidad y sabor.</p>
-                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>
-                
-                <!-- Producto 4 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="Imagenes/Productos/lazy susan.png" alt="Centro de mesa">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">Decoración</span>
-                        <h3>Centro de mesa rústico</h3>
-                        <p class="producto-desc">Hermoso lazy susan. Ideal para dar un toque natural a tu living o comedor.</p>
-                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>
-                
-                <!-- Producto 5 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="" alt="Banquitos">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">Banquitos</span>
-                        <h3>Banquitos de madera</h3>
-                        <p class="producto-desc">Banquitos de madera que fusionan elegancia atemporal con funcionalidad. Diseños cuidadosamente elaborados para aportar calidez y estilo a cualquier espacio.</p>
-                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>
-
-                <!-- Producto 6 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="Imagenes/Productos/bote.jpg" alt="Bote de basura">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">Botes de basura</span>
-                        <h3>Botes de basura</h3>
-                        <p class="producto-desc">Botes de basura en madera con tapa hermética y diseño discreto. Ideal para integrarse en cocinas o baños con estilo natural y funcional.</p>
-                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>
-
-                <!-- Producto 7 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="Imagenes/Productos/macetas.jpg" alt="Maceta">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">Macetas</span>
-                        <h3>Macetas</h3>
-                        <p class="producto-desc">Macetas de madera con forro interior resistente a la humedad. Perfectas para plantas de interior y para aportar calidez a cualquier rincón.</p>
-                        <a href="" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>
-
-                <!-- Producto 8 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="Imagenes/Productos/porta huevo.jpg" alt="Porta huevos">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">Porta huevo</span>
-                        <h3>Porta huevo</h3>
-                        <p class="producto-desc">Porta huevos artesanal en madera, con compartimentos individuales para mantener el orden y frescura en tu cocina.</p>
-                        <a href="" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>              
-
-                <!-- Producto 9 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="Imagenes/Productos/Tablas para baguette.gif" alt="Tablas para baguette">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">Tablas</span>
-                        <h3>Tablas para baguette</h3>
-                        <p class="producto-desc">Tablas alargadas en madera natural, ideales para servir baguettes, pan artesanal o quesos. Resistente, ligera y con acabado suave al tacto.</p>
-                        <a href="" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>      
-
-                <!-- Producto 10 -->
-                <div class="producto-card">
-                    <div class="producto-img">
-                        <img src="Imagenes/Productos/soporte de velas.jpg" alt="soporte de velas">
-                    </div>
-                    <div class="producto-content">
-                        <span class="producto-categoria">soporte de velas</span>
-                        <h3>soporte de velas</h3>
-                        <p class="producto-desc">Soporte de velas en madera maciza, con diseño minimalista que realza la luz cálida de cualquier vela. Ideal para ambientes relajantes o decoración de mesa.</p>
-                        <a href="" class="btn btn-outline">Ver en Tienda</a>
-                    </div>
-                </div>
-            </div>               
-        </div>
-        
-            <!-- Banner para redirigir a la tienda -->
-            <div class="tienda-banner">
-                <h2>¿Te gustaron nuestros accesorios?</h2>
-                <p>Visita nuestra tienda en línea para ver todos los productos disponibles, precios y realizar tus compras.</p>
-                <a href="#" class="btn btn-tienda">Ir a la Tienda Online</a>
-            </div>
         </div>
     </section>
 

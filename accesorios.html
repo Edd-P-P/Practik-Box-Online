@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesorios - PRACTIK-BOX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Secciones generales */
+        .section {
+            padding: 1rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Grid de productos */
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .producto-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .producto-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .producto-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .producto-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .producto-card:hover .producto-img img {
+            transform: scale(1.1);
+        }
+        
+        .producto-content {
+            padding: 1.5rem;
+        }
+        
+        .producto-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .producto-categoria {
+            display: inline-block;
+            background: var(--color-light);
+            color: var(--color-accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .producto-desc {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--color-btn);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--color-btn);
+        }
+        
+        .btn:hover {
+            background-color: var(--color-btn);
+            border-color: var(--color-btn);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--color-btn);
+        }
+        
+        .btn-outline:hover {
+            background: var(--color-btn);
+            color: white;
+        }
+        
+        .btn-tienda {
+            background: var(--color-btn);
+            border-color: var(--color-btn);
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+        
+        .btn-tienda:hover {
+            background: #c01f1f;
+            border-color: var(--color-btn);
+        }
+        
+        /* Banner de tienda */
+        .tienda-banner {
+            background: #fdf7eb;
+            color: var(--color-primary);
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .tienda-banner h2 {
+            color: var(--color-primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tienda-banner p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ANIMACIONES  */
+        
+        /* Animaciones de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        
+        /* Animación para títulos de sección */
+        .section-title h2 {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--color-primary);
+            transition: width 0.8s ease;
+        }
+        
+        .section-title.animated h2::after {
+            width: 100%;
+        }
+        
+        
+        /* Animación para productos */
+        .producto-card {
+            opacity: 0;
+            transform: translateY(30px) rotateX(10deg);
+            transition: all 0.6s ease;
+        }
+        
+        .producto-card.animated {
+            opacity: 1;
+            transform: translateY(0) rotateX(0);
+        }
+        
+        .producto-card:hover {
+            transform: translateY(-10px) rotateX(0);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        /* Animación para etiquetas de categoría */
+        .producto-categoria {
+            transition: all 0.3s ease;
+        }
+        
+        .producto-card:hover .producto-categoria {
+            transform: scale(1.1);
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        /* Animación para banner de tienda */
+        .tienda-banner {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+        }
+        
+        .tienda-banner.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .tienda-banner:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        /* Animación para items de información */
+        .info-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .info-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .info-item:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        /* Animación para iconos de información */
+        .info-icon {
+            transition: all 0.4s ease;
+        }
+        
+        .info-item:hover .info-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        /* Animación para imágenes de productos */
+        .producto-img, .categoria-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .producto-img::before, .categoria-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: left 0.8s ease;
+            z-index: 1;
+        }
+        
+        .producto-card:hover .producto-img::before,
+        .categoria-mueble:hover .categoria-img::before {
+            left: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .productos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .categorias-muebles {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            
+            .hero-productos h1 {
+                font-size: 2.5rem;
+            }
+            
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categorias-muebles {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 330px){
+            .info-item {
+                padding: 0px;
+                margin-right: 30%;
+            }
+        
+            .info-item p {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .hero-productos h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html"><div class="logo">PRACTIK-BOX</div></a>
+                <button class="mobile-menu-btn">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="Nosotros.html">NOSOTROS</a></li>
+                    <li><a href="Productos.html">PRODUCTOS</a></li>
+                    <li><a href="proceso.html">PROCESO</a></li>
+                    <li><a href="Proyectos.html">PROYECTOS</a></li>
+                    <li><a href="#contacto">CONTACTO</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Sección de Accesorios -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Accesorios de madera</h2>
+                <p>Productos únicos para decorar y organizar tu espacio.</p>
+            </div>
+            
+            <!-- Grid de productos -->
+            <div class="productos-grid">
+                <!-- Producto 1 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="" alt="Caja de té de madera">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">Cajas de Té</span>
+                        <h3>Caja de té</h3>
+                        <p class="producto-desc">Hermosa caja de madera con divisores internos para organizar tus tés favoritos. Acabado natural que realza la veta de la madera.</p>
+                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="Imagenes/Productos/Tablas para queso.png" alt="Tablas para quesos">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">Tablas</span>
+                        <h3>Tablas para queso </h3>
+                        <p class="producto-desc">Descubre la elegancia natural de nuestras tablas: una fusión perfecta de diseño, funcionalidad y sabor.</p>
+                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>                        
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="Imagenes/Productos/lazy susan.png" alt="Centro de mesa">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">Decoración</span>
+                        <h3>Centro de mesa rústico</h3>
+                        <p class="producto-desc">Hermoso lazy susan. Ideal para dar un toque natural a tu living o comedor.</p>
+                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>                        
+                    </div>
+                </div>
+                
+                <!-- Producto 5 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="" alt="Banquitos">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">Banquitos</span>
+                        <h3>Banquitos de madera</h3>
+                        <p class="producto-desc">Banquitos de madera que fusionan elegancia atemporal con funcionalidad. Diseños cuidadosamente elaborados para aportar calidez y estilo a cualquier espacio.</p>
+                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>                        
+                    </div>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="Imagenes/Productos/bote.jpg" alt="Bote de basura">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">Botes de basura</span>
+                        <h3>Botes de basura</h3>
+                        <p class="producto-desc">Botes de basura en madera con tapa hermética y diseño discreto. Ideal para integrarse en cocinas o baños con estilo natural y funcional.</p>
+                        <a href="#" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>                       
+                    </div>
+                </div>
+
+                <!-- Producto 7 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="Imagenes/Productos/macetas.jpg" alt="Maceta">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">Macetas</span>
+                        <h3>Macetas</h3>
+                        <p class="producto-desc">Macetas de madera con forro interior resistente a la humedad. Perfectas para plantas de interior y para aportar calidez a cualquier rincón.</p>
+                        <a href="" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>                       
+                    </div>
+                </div>
+
+                <!-- Producto 8 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="Imagenes/Productos/porta huevo.jpg" alt="Porta huevos">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">Porta huevo</span>
+                        <h3>Porta huevo</h3>
+                        <p class="producto-desc">Porta huevos artesanal en madera, con compartimentos individuales para mantener el orden y frescura en tu cocina.</p>
+                        <a href="" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>                   
+                    </div>
+                </div>              
+
+                <!-- Producto 9 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="Imagenes/Productos/Tablas para baguette.jpg" alt="Tablas para baguette">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">Tablas</span>
+                        <h3>Tablas para baguette</h3>
+                        <p class="producto-desc">Tablas alargadas en madera natural, ideales para servir baguettes, pan artesanal o quesos. Resistente, ligera y con acabado suave al tacto.</p>
+                        <a href="" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>                        
+                    </div>
+                </div>      
+
+                <!-- Producto 10 -->
+                <div class="producto-card">
+                    <div class="producto-img">
+                        <img src="Imagenes/Productos/soporte de velas.jpg" alt="soporte de velas">
+                    </div>
+                    <div class="producto-content">
+                        <span class="producto-categoria">soporte de velas</span>
+                        <h3>soporte de velas</h3>
+                        <p class="producto-desc">Soporte de velas en madera maciza, con diseño minimalista que realza la luz cálida de cualquier vela. Ideal para ambientes relajantes o decoración de mesa.</p>
+                        <a href="" class="btn btn-outline">Ver en Tienda</a>
+                        <a href="proceso.html" class="btn btn-outline">Solicitar cotización</a>                        
+                    </div>
+                </div>
+            </div>               
+        </div>
+        
+            <!-- Banner para redirigir a la tienda -->
+            <div class="tienda-banner">
+                <h2>¿Te gustaron nuestros accesorios?</h2>
+                <p>Visita nuestra tienda en línea para ver todos los productos disponibles, precios y realizar tus compras.</p>
+                <a href="#" class="btn btn-tienda">Ir a la Tienda Online</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: En Dónde Estamos -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-content">
+                    <div class="map-section">
+                        <div class="map-visual">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3759.382675408644!2d-98.9878648!3d20.0302349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d19b0e3d4e3d4f%3A0x1234567890abcdef!2sCircuito+Emprendedores+19%2C+Parque+Industrial+Metropolitano%2C+Mineral+de+la+Reforma%2C+Hgo.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="contact-info-section">
+                        <h3>Contáctanos</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Dirección</h4>
+                                    <p>Circuito Emprendedores No. 19, Parque Industrial Metropolitano, Mineral de la Reforma, Hgo. CP 42186</p>
+                                </div>
+                            </div>
+                            <div class="contact-container">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                <h4>Teléfonos</h4>
+                                <p>
+                                    <a href="tel:+527717132513">771 713 2513</a><br>
+                                    <a href="tel:+527717132514">771 713 2514</a><br>
+                                    <a href="tel:+527717181044">771 718 1044</a>
+                                </p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item whatsapp-item">
+                                <div class="contact-icon contact-whatsapp-icon">
+                                <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-whatsapp">
+                                <h4>WhatsApp</h4>
+                                <p>
+                                    <a href="https://wa.me/52771712167150" target="_blank">771 712 167 150</a>
+                                </p>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:ventas@hidrosistemas.com.mx">ventas@hidrosistemas.com.mx</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Horario</h4>
+                                    <p>Lun-Vie: 9:00 AM - 6:00 PM</p>
+                                    <p>Sábado: 9:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <button class="btn-scroll-top" aria-label="Volver arriba">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PRACTIK-BOX</h3>
+                    <p>Especialistas en muebles personalizados y accesorios de madera de la más alta calidad.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="Nosotros.html">Nuestra Historia</a></li>
+                        <li><a href="Productos.html">Productos</a></li>
+                        <li><a href="proceso.html">Proceso de Cotización</a></li>
+                        <li><a href="Proyectos.html">Proyectos Destacados</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> Telefono: </li>
+                        <li><i class="fas fa-envelope"></i> Correo:</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Direccion: </li>
+                        <li><i class="fas fa-clock"></i> Horario: </li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Políticas</h3>
+                    <ul class="footer-links">
+                        <li><a href="Politicas.html">Términos de Servicio</a></li>
+                        <li><a href="Politicas.html">Política de Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PRACTIK-BOX. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+    ></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"
+    ></script>
+
+    <script>
+
+            // Animación de elementos al hacer scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const sectionTitles = document.querySelectorAll('.section-title');
+            const categoriaMuebles = document.querySelectorAll('.categoria-mueble');
+            const productoCards = document.querySelectorAll('.producto-card');
+            const infoItems = document.querySelectorAll('.info-item');
+            const tiendaBanner = document.querySelector('.tienda-banner');
+            const mapVisual = document.querySelector('.map-visual');
+            const contactInfo = document.querySelector('.contact-info-section');
+            const contactItems = document.querySelectorAll('.contact-item');
+
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Animación para títulos de sección
+                        if (entry.target.classList.contains('section-title')) {
+                            entry.target.classList.add('animated');
+                        }
+                        
+                        // Animación escalonada para categorías de muebles
+                        if (entry.target.classList.contains('categorias-muebles')) {
+                            categoriaMuebles.forEach((categoria, index) => {
+                                setTimeout(() => {
+                                    categoria.classList.add('animated');
+                                }, index * 200);
+                            });
+                        }
+                        
+                        // Animación escalonada para productos
+                        if (entry.target.classList.contains('productos-grid')) {
+                            productoCards.forEach((producto, index) => {
+                                setTimeout(() => {
+                                    producto.classList.add('animated');
+                                }, index * 150);
+                            });
+                        }
+                        
+                        // Animación para items de información
+                        if (entry.target.classList.contains('info-grid')) {
+                            infoItems.forEach((item, index) => {
+                                setTimeout(() => {
+                                    item.classList.add('animated');
+                                }, index * 100);
+                            });
+                        }
+                        
+                        // Animación para banner de tienda
+                        if (entry.target.classList.contains('tienda-banner')) {
+                            setTimeout(() => {
+                                tiendaBanner.classList.add('animated');
+                            }, 300);
+                        }
+
+                        // Animación para mapa y contacto
+                        if (entry.target.classList.contains('contact-content')) {
+                            setTimeout(() => {
+                                if (mapVisual) mapVisual.classList.add('animated');
+                            }, 300);
+
+                            setTimeout(() => {
+                                if (contactInfo) contactInfo.classList.add('animated');
+                            }, 600);
+                        } 
+                    }
+                });
+            }, observerOptions);
+            
+            // Observar elementos para animaciones
+            fadeElements.forEach(el => observer.observe(el));
+            sectionTitles.forEach(title => observer.observe(title));
+            document.querySelector('.categorias-muebles') && observer.observe(document.querySelector('.categorias-muebles'));
+            document.querySelector('.productos-grid') && observer.observe(document.querySelector('.productos-grid'));
+            document.querySelector('.info-grid') && observer.observe(document.querySelector('.info-grid'));
+            document.querySelector('.tienda-banner') && observer.observe(document.querySelector('.tienda-banner'));
+            document.querySelector('.contact-content') && observer.observe(document.querySelector('.contact-content'));
+            
+            // Activar animaciones para elementos ya visibles al cargar
+            setTimeout(() => {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        el.classList.add('visible');
+                    }
+                });
+            }, 100)
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>

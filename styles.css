@@ -875,6 +875,12 @@ html {
         min-height: 250px;
     }
 
+    @media (max-width: 403px){
+        .btn-acc{
+            margin-top: 10px;
+        }
+    }
+
     @media (max-width: 330px ){
         .contact-text p{
         font-size: 1rem;
