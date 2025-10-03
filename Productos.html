@@ -279,6 +279,34 @@
             transform: scale(1.2) rotate(10deg);
         }
 
+        /* Animación para imágenes de productos */
+        .producto-img, .categoria-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .producto-img::before, .categoria-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: left 0.8s ease;
+            z-index: 1;
+        }
+        
+        .producto-card:hover .producto-img::before,
+        .categoria-mueble:hover .categoria-img::before {
+            left: 100%;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .productos-grid {
@@ -701,6 +729,28 @@
                         <h2>${producto.nombre}</h2>
                         <button class="btn-volver" onclick="volverALista()">← Volver a Productos</button>
                     </div>
+                               <div class="detalles-contenido">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                        <div>
+                            <div class="galeria-principal">
+                                <img src="${producto.imagenes[0]}" alt="${producto.nombre}" class="imagen-principal" id="imagen-principal">
+                            </div>
+                        </div>
+                        <div>
+                            <p style="margin-bottom: 1.5rem; line-height: 1.7;">${producto.descripcion}</p>
+                            
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0;">
+                            </div>
+                            
+                            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                                <ul style="list-style-type: none;">
+                                </ul>
+                            </div>
+                            
+                            <button class="btn" style="padding: 1rem 2rem; font-size: 1.1rem;">Solicitar Cotización</button>
+                        </div>
+                    </div>
+                </div>
                 `;
                 
                 contenedorDetalles.innerHTML = contenidoHTML;
@@ -717,8 +767,6 @@
                 document.getElementById('hero-productos').style.display = 'flex';
                 document.getElementById('info-extra').style.display = 'block';
             }
-
-
 
         // CONFIGURAR ANIMACIONES
         function configurarAnimaciones() {
