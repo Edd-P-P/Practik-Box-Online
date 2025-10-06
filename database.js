@@ -3,7 +3,14 @@ const productos = {
         nombre: 'Closets y vestidores',
         descripcion: 'Diseños optimizados para maximizar el espacio de almacenamiento.',
         imagenes: [ 
-           "Imagenes/Productos/Closets y Vestidores.jpg"
+           "Imagenes/Productos/Closets y Vestidores.jpg",
+            "Imagenes/Productos/Closets y Vestidores1.jpg",
+            "Imagenes/Productos/Closets y Vestidores2.jpg"
+        ],
+        caracteristicas: [
+            "Hechos a medida según el espacio disponible.",
+            "Materiales de alta calidad y acabados personalizados.",
+            "Opciones de organización interna como cajones, estantes y barras para colgar ropa."
         ]
     },
 
@@ -11,7 +18,13 @@ const productos = {
         nombre: 'Muebles de cocina',
         descripcion: 'Cocinas funcionales y estéticas adaptadas a tus necesidades.',
         imagenes: [
-            "Imagenes/Productos/Muebles de cocina.jpg"
+            "Imagenes/Productos/Muebles de cocina.jpg",
+            "Imagenes/Productos/Muebles de cocina1.jpg",
+        ],
+        caracteristicas: [
+            "Diseños personalizados para optimizar el espacio y la funcionalidad.",
+            "Materiales resistentes a la humedad y al desgaste.",
+            "Opciones de almacenamiento inteligente como gavetas extraíbles y organizadores internos."
         ]
     },
 
@@ -20,6 +33,11 @@ const productos = {
         descripcion: 'Muebles resistentes a la humedad con diseños modernos.',
         imagenes: [
             "Imagenes/Productos/Mueble de baño.jpg"
+        ],
+        caracteristicas: [
+            "Diseños personalizados para maximizar el espacio en baños pequeños.",
+            "Materiales resistentes a la humedad y fáciles de limpiar.",
+            "Opciones de almacenamiento como gabinetes, estantes y espejos con almacenamiento integrado."
         ]
     },
     
@@ -28,6 +46,11 @@ const productos = {
         descripcion: 'Soluciones creativas para organizar y exhibir tus libros y objetos.',
         imagenes: [
             "Imagenes/Productos/Repisa.jpg"
+        ],
+        caracteristicas: [
+            "Diseños personalizados para adaptarse a cualquier espacio.",
+            "Materiales duraderos y acabados elegantes.",
+            "Opciones de instalación flexibles, desde repisas flotantes hasta estanterías modulares."
         ]
     },
     
@@ -36,6 +59,11 @@ const productos = {
         descripcion: 'Ideales para organizar ropa, calzado y accesorios con estilo y orden.',
         imagenes: [
             "Imagenes/Productos/Armarios Altos.jpeg"
+        ],
+        caracteristicas: [
+            "Diseños personalizados para maximizar el espacio de almacenamiento.",
+            "Materiales de alta calidad y acabados elegantes.",
+            "Opciones de organización interna como estantes ajustables, cajones y barras para colgar ropa."
         ]
     },
     
@@ -44,14 +72,24 @@ const productos = {
         descripcion: 'Escritorios amplios, gabinetes con cajones inteligentes y estanterías modulares que optimizan el espacio sin sacrificar estilo.',
         imagenes: [
             "Imagenes/Productos/Escritorio.jpg"
+        ],
+        caracteristicas: [
+            "Diseños ergonómicos para mejorar la comodidad y productividad.",
+            "Materiales duraderos y acabados profesionales.",
+            "Opciones de almacenamiento inteligente como gavetas, estantes y organizadores de cables."
         ]
     },
     
     7: {
-        nombre: 'Pergola',
+        nombre: 'Pergolas',
         descripcion: 'Estructura resistente y estética, fabricada en madera tratada para exteriores. Ideal para sombrear terrazas, jardines o patios.',
         imagenes: [
             "Imagenes/Productos/pergola.jpg"
+        ],
+        caracteristicas: [
+            "Diseños personalizados para adaptarse a cualquier espacio exterior.",
+            "Materiales duraderos y resistentes a la intemperie.",
+            "Opciones de techado como toldos retráctiles o cubiertas fijas."
         ]
     },
     
@@ -60,6 +98,11 @@ const productos = {
         descripcion: 'Productos únicos de venta directa para decorar y organizar tu espacio. Cajas de té, tablas de queso y más.',
         imagenes: [
             "Imagenes/Index/Accesorios.png"
+        ],
+        caracteristicas: [
+            "Diseños exclusivos y artesanales.",
+            "Materiales de alta calidad y acabados detallados.",
+            "Variedad de productos para diferentes usos y estilos."
         ]
     }
 }
@@ -69,7 +112,7 @@ const accesorios = {
         nombre: 'Cajas de Té',
         descripcion: 'Hermosa caja de madera con divisores internos para organizar tus tés favoritos. Acabado natural que realza la veta de la madera.',
         imagenes: [ 
-            "Imagenes/Index/Accesorios.png"
+            "Imagenes/Productos/accesorios/cajate.jpg"
         ]
     },
 
@@ -77,15 +120,15 @@ const accesorios = {
         nombre: 'Tablas para queso',
         descripcion: 'Descubre la elegancia natural de nuestras tablas: una fusión perfecta de diseño, funcionalidad y sabor.',
         imagenes: [ 
-            "Imagenes/Productos/Tablas para queso.png"
+            "Imagenes/Productos/accesorios/Tablas para queso.png"
         ]
     },
 
     3: {
         nombre: 'Centro de mesa rústico',
-        descripcion: 'Hermoso lazy susan. Ideal para dar un toque natural a tu living o comedor.',
+        descripcion: 'Hermosos centros de mesa, ideales para dar un toque natural a tu living o comedor.',
         imagenes: [ 
-            "Imagenes/Productos/lazy susan.png"
+            "Imagenes/Productos/accesorios/lazy susan.png"
         ]
     },
 
@@ -93,7 +136,7 @@ const accesorios = {
         nombre: 'Banquitos',
         descripcion: 'Banquitos de madera que fusionan elegancia atemporal con funcionalidad. Diseños cuidadosamente elaborados para aportar calidez y estilo a cualquier espacio.',
         imagenes: [ 
-            "Imagenes/Index/Accesorios.png"
+            "Imagenes/Productos/accesorios/banquitos.jpg"
             
         ]
     },   
@@ -102,7 +145,7 @@ const accesorios = {
         nombre: 'Botes de basura',
         descripcion: 'Botes de basura en madera con tapa hermética y diseño discreto. Ideal para integrarse en cocinas o baños con estilo natural y funcional.',
         imagenes: [ 
-            "Imagenes/Productos/bote.jpg" 
+            "Imagenes/Productos/accesorios/bote.jpg" 
         ]
     },   
 
@@ -110,7 +153,7 @@ const accesorios = {
         nombre: 'Macetas',
         descripcion: 'Macetas de madera con forro interior resistente a la humedad. Perfectas para plantas de interior y para aportar calidez a cualquier rincón.',
         imagenes: [ 
-            "Imagenes/Productos/macetas.jpg"
+            "Imagenes/Productos/accesorios/macetas.jpg"
 
         ]
     }, 
@@ -119,7 +162,7 @@ const accesorios = {
         nombre: 'Porta huevos',
         descripcion: 'Porta huevos artesanal en madera, con compartimentos individuales para mantener el orden y frescura en tu cocina.',
         imagenes: [ 
-            "Imagenes/Productos/porta huevo.jpg" 
+            "Imagenes/Productos/accesorios/porta huevo.jpg" 
         ]
     }, 
 
@@ -127,7 +170,7 @@ const accesorios = {
         nombre: 'Tablas para baguette',
         descripcion: 'Tablas alargadas en madera natural, ideales para servir baguettes, pan artesanal o quesos. Resistente, ligera y con acabado suave al tacto.',
         imagenes: [ 
-            "Imagenes/Productos/Tablas para baguette.jpg" 
+            "Imagenes/Productos/accesorios/Tablas para baguette.jpg" 
         ]
     },
 
@@ -135,7 +178,7 @@ const accesorios = {
         nombre: 'Soporte de velas',
         descripcion: 'Soporte de velas en madera maciza, con diseño minimalista que realza la luz cálida de cualquier vela. Ideal para ambientes relajantes o decoración de mesa.',
         imagenes: [ 
-            "Imagenes/Productos/soporte de velas.jpg"
+            "Imagenes/Productos/accesorios/soporte de velas.jpg"
         ]
     }
 }

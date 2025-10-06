@@ -204,6 +204,461 @@
             margin-bottom: 1rem;
         }
 
+    /* Estilos para detalles de producto */
+    .detalles-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--color-primary);
+    }
+    
+    .detalles-header h2 {
+        font-size: 2.5rem;
+        color: var(--color-primary);
+        margin: 0;
+        padding-left: 3rem;
+    }
+    
+    .btn-volver {
+        background: transparent;
+        border: 2px solid var(--color-btn);
+        color: var(--color-btn);
+        padding: 0.7rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-right: 3rem ;
+    }
+    
+    .btn-volver:hover {
+        background: var(--color-btn);
+        color: white;
+        transform: translateX(-5px);
+    }
+    
+    .detalles-contenido {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    /* Galería de imágenes con slider */
+    .galeria-producto {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        padding-left: 1rem;
+    }
+    
+    .slider-principal {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .slider-container {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        height: 100%;
+    }
+    
+    .slide {
+        min-width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+    
+    .slide:hover img {
+        transform: scale(1.03);
+    }
+    
+    .controles-slider {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 10;
+    }
+    
+    .control-slider {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .control-slider.active {
+        background: white;
+        transform: scale(1.2);
+    }
+    
+    .btn-slider {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+        color: var(--color-primary);
+        font-size: 1.2rem;
+        opacity: 0;
+    }
+    
+    .slider-principal:hover .btn-slider {
+        opacity: 1;
+    }
+    
+    .btn-slider:hover {
+        background: white;
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .btn-prev {
+        left: 15px;
+    }
+    
+    .btn-next {
+        right: 15px;
+    }
+    
+    /* Información del producto */
+    .info-producto {
+        padding: 1rem 0;
+    }
+    
+    .descripcion-producto {
+        margin-bottom: 2rem;
+        line-height: 1.7;
+        font-size: 1.1rem;
+        color: var(--color-text);
+    }
+    
+    .caracteristicas-producto {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .caracteristicas-producto h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: var(--color-primary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .caracteristicas-producto h3 i {
+        color: var(--color-icon);
+    }
+    
+    .lista-caracteristicas {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .lista-caracteristicas li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .lista-caracteristicas li:last-child {
+        border-bottom: none;
+    }
+    
+    .lista-caracteristicas li i {
+        color: var(--color-primary);
+        font-size: 0.9rem;
+    }
+    
+    .boton-cotizacion {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        background: var(--color-btn);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .boton-cotizacion:hover {
+        background: #c01f1f;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    /* Miniaturas de imágenes */
+    .miniaturas-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    .miniatura {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+    
+    .miniatura:hover, .miniatura.activa {
+        opacity: 1;
+        transform: scale(1.05);
+        border-color: var(--color-primary);
+    }
+    
+    .miniatura img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* MODAL PARA VISUALIZACIÓN DE IMÁGENES */
+    .modal-imagen {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .modal-imagen.mostrar {
+        display: flex;
+        opacity: 1;
+        animation: fadeIn 0.3s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .modal-contenido {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        width: auto;
+        height: auto;
+    }
+    
+    .modal-cerrar {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1001;
+    }
+    .modal-cerrar:hover {
+        background: rgba(255, 0, 0, 0.7);
+        transform: scale(1.1);
+    }
+    
+    .modal-slider {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    
+    .modal-slider-container {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        height: 100%;
+    }
+    
+    .modal-slide {
+        min-width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .modal-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+    
+    .modal-controles {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 10;
+    }
+    
+    .modal-control {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .modal-control.active {
+        background: white;
+        transform: scale(1.2);
+    }
+    
+    .modal-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: var(--color-primary);
+        font-size: 1.5rem;
+        z-index: 10;
+    }
+    
+    .modal-btn:hover {
+        background: white;
+        transform: translateY(-50%) scale(1.1);
+    }
+    
+    .modal-prev {
+        left: 20px;
+    }
+    
+    .modal-next {
+        right: 20px;
+    }
+    
+    .contador-imagenes {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        z-index: 10;
+    }
+    
+    /* Animaciones para detalles de producto */
+    .detalles-contenido {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease 0.3s forwards;
+    }
+    
+    .galeria-producto {
+        opacity: 0;
+        transform: translateX(-30px);
+        animation: fadeInLeft 0.8s ease 0.5s forwards;
+    }
+    
+    .info-producto {
+        opacity: 0;
+        transform: translateX(30px);
+        animation: fadeInRight 0.8s ease 0.5s forwards;
+    }
+    
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeInLeft {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    @keyframes fadeInRight {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 
         /* ANIMACIONES  */
         
@@ -316,6 +771,23 @@
             .categorias-muebles {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             }
+            .detalles-contenido {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        
+            .slider-principal {
+                height: 350px;
+            }
+
+            .btn-volver{
+                margin-right: 0;
+                margin-left: 3rem;
+            }
+
+            .info-producto {
+                padding-left: 25px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -330,6 +802,39 @@
             
             .categorias-muebles {
                 grid-template-columns: 1fr;
+            }
+            .detalles-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .detalles-header h2 {
+                font-size: 2rem;
+            }
+            
+            .slider-principal {
+                height: 300px;
+            }
+            
+            .btn-slider {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .miniaturas-container {
+                flex-wrap: wrap;
+            }            
+        }
+
+        @media (max-width: 480px) {
+            .slider-principal {
+                height: 250px;
+            }
+            
+            .miniatura {
+                width: 60px;
+                height: 60px;
             }
         }
 
@@ -678,7 +1183,7 @@
             configurarAnimaciones();
         });
 
-        // CARGAR LISTA DE PRODUCTOS
+        //LISTA DE PRODUCTOS
         function cargarListaProductos() {
             const contenedor = document.getElementById('lista-productos');
             contenedor.innerHTML = '';
@@ -688,11 +1193,6 @@
                 const productoElement = document.createElement('div');
                 productoElement.className = 'categoria-mueble fade-in';
                 
-                // Determinar el botón según el ID
-                const botonHTML = id === '8' 
-                    ? `<a href="accesorios.html" class="btn btn-outline">Ver accesorios</a>`
-                    : `<button class="btn btn-outline" onclick="cargarProducto(${id})">Ver detalles</button>`;
-                
                 productoElement.innerHTML = `
                     <div class="categoria-img">
                         <img src="${producto.imagenes[0]}" alt="${producto.nombre}">
@@ -700,61 +1200,266 @@
                     <div class="categoria-content">
                         <h3>${producto.nombre}</h3>
                         <p>${producto.descripcion}</p>
-                        ${botonHTML}
+                        ${id === '8' 
+                            ? '<a href="accesorios.html" class="btn btn-outline">Ver accesorios</a>' 
+                            : '<button class="btn btn-outline btn-ver-detalles" data-producto-id="' + id + '">Ver detalles</button>'
+                        }
                     </div>
                 `;
                 contenedor.appendChild(productoElement);
             });
+            
+            // Agregar event listeners después de crear el HTML
+            document.querySelectorAll('.btn-ver-detalles').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const productId = this.getAttribute('data-producto-id');
+                    cargarProducto(productId);
+                });
+            });
         }
 
-// CARGAR DETALLES DEL PRODUCTO
-            function cargarProducto(id) {
-                const producto = productos[id];
-                if (!producto) return;
-                
-                // Actualizar URL
-                history.pushState({}, '', `?producto=${id}`);
-                
-                // Ocultar elementos y mostrar detalles
-                document.getElementById('lista-productos').style.display = 'none';
-                document.getElementById('hero-productos').style.display = 'none';
-                document.getElementById('info-extra').style.display = 'none';
-                
-                const contenedorDetalles = document.getElementById('detalles-producto');
-                contenedorDetalles.style.display = 'block';
+        // CARGAR DETALLES DEL PRODUCTO
+        function cargarProducto(id) {
+            const producto = productos[id];
+            if (!producto) return;
+            
+            // Actualizar URL
+            history.pushState({}, '', `?producto=${id}`);
+            
+            // Ocultar elementos y mostrar detalles
+            document.getElementById('lista-productos').style.display = 'none';
+            document.getElementById('hero-productos').style.display = 'none';
+            document.getElementById('info-extra').style.display = 'none';
+            
+            const contenedorDetalles = document.getElementById('detalles-producto');
+            contenedorDetalles.style.display = 'block';
 
-                // Generar contenido del producto
-                let contenidoHTML = `
-                    <div class="detalles-header">
-                        <h2>${producto.nombre}</h2>
-                        <button class="btn-volver" onclick="volverALista()">← Volver a Productos</button>
-                    </div>
-                               <div class="detalles-contenido">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
-                        <div>
-                            <div class="galeria-principal">
-                                <img src="${producto.imagenes[0]}" alt="${producto.nombre}" class="imagen-principal" id="imagen-principal">
+            // Generar contenido del producto mejorado con modal
+            let contenidoHTML = `
+                <div class="detalles-header">
+                    <h2>${producto.nombre}</h2>
+                    <button class="btn-volver" onclick="volverALista()">
+                        <i class="fas fa-arrow-left"></i> Volver a Productos
+                    </button>
+                </div>
+                <div class="detalles-contenido">
+                    <div class="galeria-producto">
+                        <div class="slider-principal" onclick="abrirModal(${id}, ${slideActual})">
+                            <div class="slider-container" id="slider-container">
+                                ${producto.imagenes.map((imagen, index) => `
+                                    <div class="slide ${index === 0 ? 'active' : ''}">
+                                        <img src="${imagen}" alt="${producto.nombre} - Imagen ${index + 1}">
+                                    </div>
+                                `).join('')}
+                            </div>
+                            <button class="btn-slider btn-prev" onclick="event.stopPropagation(); cambiarSlide(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn-slider btn-next" onclick="event.stopPropagation(); cambiarSlide(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="controles-slider" id="controles-slider">
+                                ${producto.imagenes.map((_, index) => `
+                                    <button class="control-slider ${index === 0 ? 'active' : ''}" onclick="event.stopPropagation(); irASlide(${index})"></button>
+                                `).join('')}
                             </div>
                         </div>
-                        <div>
-                            <p style="margin-bottom: 1.5rem; line-height: 1.7;">${producto.descripcion}</p>
-                            
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0;">
+                        <div class="miniaturas-container" id="miniaturas-container">
+                            ${producto.imagenes.map((imagen, index) => `
+                                <div class="miniatura ${index === 0 ? 'activa' : ''}" onclick="irASlide(${index})">
+                                    <img src="${imagen}" alt="${producto.nombre} - Miniatura ${index + 1}">
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    <div class="info-producto">
+                        <h2>Descubre ideas de nuestros productos.</h2>
+                        <p class="descripcion-producto">${producto.descripcion}</p>
+                        
+                        <div class="caracteristicas-producto">
+                            <h3><i class="fas fa-list-check"></i> Características</h3>
+                            <ul class="lista-caracteristicas">
+                                ${producto.caracteristicas ? producto.caracteristicas.map(caracteristica => `
+                                    <li><i class="fas fa-check"></i> ${caracteristica}</li>
+                                `).join('') : `
+                                    <li><i class="fas fa-check"></i> Diseño personalizado</li>
+                                    <li><i class="fas fa-check"></i> Materiales de alta calidad</li>
+                                    <li><i class="fas fa-check"></i> Acabados profesionales</li>
+                                    <li><i class="fas fa-check"></i> Durabilidad garantizada</li>
+                                `}
+                            </ul>
+                        </div>
+                        
+                        <a class="boton-cotizacion" href="proceso.html">Solicitar Cotización
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Modal para visualización de imágenes -->
+                <div class="modal-imagen" id="modal-imagen">
+                    <button class="modal-cerrar" onclick="cerrarModal()">&times;</button>
+                    <div class="modal-contenido">
+                        <div class="contador-imagenes" id="contador-imagenes">1 / ${producto.imagenes.length}</div>
+                        <div class="modal-slider">
+                            <div class="modal-slider-container" id="modal-slider-container">
+                                ${producto.imagenes.map((imagen, index) => `
+                                    <div class="modal-slide">
+                                        <img src="${imagen}" alt="${producto.nombre} - Imagen ${index + 1}">
+                                    </div>
+                                `).join('')}
                             </div>
-                            
-                            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
-                                <ul style="list-style-type: none;">
-                                </ul>
+                            <button class="modal-btn modal-prev" onclick="cambiarModalSlide(-1)">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="modal-btn modal-next" onclick="cambiarModalSlide(1)">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="modal-controles" id="modal-controles">
+                                ${producto.imagenes.map((_, index) => `
+                                    <button class="modal-control ${index === 0 ? 'active' : ''}" onclick="irAModalSlide(${index})"></button>
+                                `).join('')}
                             </div>
-                            
-                            <button class="btn" style="padding: 1rem 2rem; font-size: 1.1rem;">Solicitar Cotización</button>
                         </div>
                     </div>
                 </div>
-                `;
-                
-                contenedorDetalles.innerHTML = contenidoHTML;
+            `;
+            
+            contenedorDetalles.innerHTML = contenidoHTML;
+            
+            // Inicializar el slider
+            inicializarSlider();
+        }
+
+        // Variables globales para el slider
+        let slideActual = 0;
+        let totalSlides = 0;
+        let intervaloSlider;
+
+        // Variables para el modal
+        let modalSlideActual = 0;
+
+        // INICIALIZAR SLIDER
+        function inicializarSlider() {
+            const slides = document.querySelectorAll('.slide');
+            totalSlides = slides.length;
+            slideActual = 0;
+            
+            // Configurar intervalo para cambio automático
+            if (intervaloSlider) clearInterval(intervaloSlider);
+            intervaloSlider = setInterval(() => {
+                cambiarSlide(1);
+            }, 5000); // Cambia cada 5 segundos
+        }
+
+        // CAMBIAR SLIDE
+        function cambiarSlide(direccion) {
+            slideActual += direccion;
+            
+            if (slideActual >= totalSlides) {
+                slideActual = 0;
+            } else if (slideActual < 0) {
+                slideActual = totalSlides - 1;
             }
+            
+            actualizarSlider();
+        }
+
+        // IR A SLIDE ESPECÍFICO
+        function irASlide(indice) {
+            slideActual = indice;
+            actualizarSlider();
+            
+            // Reiniciar el intervalo
+            if (intervaloSlider) clearInterval(intervaloSlider);
+            intervaloSlider = setInterval(() => {
+                cambiarSlide(1);
+            }, 5000);
+        }
+
+        // ACTUALIZAR SLIDER
+        function actualizarSlider() {
+            const sliderContainer = document.getElementById('slider-container');
+            const controles = document.querySelectorAll('.control-slider');
+            const miniaturas = document.querySelectorAll('.miniatura');
+            
+            // Mover el slider
+            sliderContainer.style.transform = `translateX(-${slideActual * 100}%)`;
+            
+            // Actualizar controles activos
+            controles.forEach((control, index) => {
+                control.classList.toggle('active', index === slideActual);
+            });
+            
+            // Actualizar miniaturas activas
+            miniaturas.forEach((miniatura, index) => {
+                miniatura.classList.toggle('activa', index === slideActual);
+            });
+        }
+
+        // FUNCIONES DEL MODAL
+        function abrirModal(idProducto, indiceSlide) {
+            const modal = document.getElementById('modal-imagen');
+            modalSlideActual = indiceSlide;
+            actualizarModalSlider();
+            modal.classList.add('mostrar');
+            
+            // Deshabilitar scroll del body
+            document.body.style.overflow = 'hidden';
+        }
+
+        function cerrarModal() {
+            const modal = document.getElementById('modal-imagen');
+            modal.classList.remove('mostrar');
+            
+            // Habilitar scroll del body
+            document.body.style.overflow = 'auto';
+        }
+
+        function cambiarModalSlide(direccion) {
+            modalSlideActual += direccion;
+            
+            if (modalSlideActual >= totalSlides) {
+                modalSlideActual = 0;
+            } else if (modalSlideActual < 0) {
+                modalSlideActual = totalSlides - 1;
+            }
+            
+            actualizarModalSlider();
+        }
+
+        function irAModalSlide(indice) {
+            modalSlideActual = indice;
+            actualizarModalSlider();
+        }
+
+        function actualizarModalSlider() {
+            const modalSliderContainer = document.getElementById('modal-slider-container');
+            const modalControles = document.querySelectorAll('.modal-control');
+            const contador = document.getElementById('contador-imagenes');
+            
+            // Mover el slider del modal
+            modalSliderContainer.style.transform = `translateX(-${modalSlideActual * 100}%)`;
+            
+            // Actualizar controles activos del modal
+            modalControles.forEach((control, index) => {
+                control.classList.toggle('active', index === modalSlideActual);
+            });
+            
+            // Actualizar contador
+            if (contador) {
+                contador.textContent = `${modalSlideActual + 1} / ${totalSlides}`;
+            }
+        }
+
+        // Cerrar modal con tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                cerrarModal();
+            }
+        });
+
 
             // VOLVER A LA LISTA
             function volverALista() {
@@ -767,6 +1472,19 @@
                 document.getElementById('hero-productos').style.display = 'flex';
                 document.getElementById('info-extra').style.display = 'block';
             }
+
+        // MANEJAR NAVEGACIÓN CON BOTONES ATRÁS/ADELANTE
+        window.addEventListener('popstate', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const idProducto = urlParams.get('producto');
+            
+            if (!idProducto) {
+                document.getElementById('detalles-producto').style.display = 'none';
+                document.getElementById('lista-productos').style.display = 'grid';
+            } else {
+                cargarProducto(idProducto);
+            }
+        });
 
         // CONFIGURAR ANIMACIONES
         function configurarAnimaciones() {
