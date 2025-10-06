@@ -34,6 +34,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #7a3e11;
 }
 
+.logo img{
+    width: 200px;
+    height: auto;
+}
 
 .container {
     width: 90%;
