@@ -658,7 +658,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Tipo de mueble *</label>
-                                        <select class="form-control" ng-model="selectOption" ng-options="o.value as o.name for o in opciones" name="tipo_mueble" required></select>
+                                        <select class="form-control" ng-model="selectOption" ng-options="o.value as o.name for o in opciones" required></select>
+                                        <input type="hidden" name="tipo_mueble" ng-value="(opciones | filter:{value: selectOption})[0]?.name" />
                                     </div>
 
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 0" ng-cloak>
@@ -671,7 +672,8 @@
                                     <!-- Primer nivel: Tipo de mueble cocina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 1" ng-cloak>
                                         <label class="control-label">Tipo de mueble de cocina *</label>
-                                        <select class="form-control" ng-model="selectOptionC" ng-options="o.value as o.name for o in opcionesC" name="tipo_cocina">
+                                        <select class="form-control" ng-model="selectOptionC" ng-options="o.value as o.name for o in opcionesC"></select>
+                                        <input type="hidden" name="tipo_cocina" ng-value="(opcionesC | filter:{value: selectOptionC})[0]?.name" />
                                         </select>
                                         
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de cocina -->
@@ -726,7 +728,8 @@
                                     <!-- Primer nivel: Tipo de mueble de oficina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 5" ng-cloak>
                                         <label class="control-label">Tipo de mueble de oficina *</label>
-                                        <select class="form-control" ng-model="selectOptionO" ng-options="o.value as o.name for o in opcionesO" name="tipo_oficina">
+                                        <select class="form-control" ng-model="selectOptionO" ng-options="o.value as o.name for o in opcionesO"></select>
+                                        <input type="hidden" name="tipo_oficina" ng-value="(opcionesO | filter:{value: selectOptionO})[0]?.name" />
                                         </select>
                                         
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de oficina -->
@@ -765,10 +768,11 @@
                                     </div>
 
 
-                                    <!-- Primer nivel: Tipo de mueble de accesorio -->
+                                    <!-- Primer nivel: Tipo de accesorio -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 7" ng-cloak>
                                         <label class="control-label">Tipo de accesorio *</label>
-                                        <select class="form-control" ng-model="selectOptionA" ng-options="o.value as o.name for o in opcionesA" name="tipo_accesorio">
+                                        <select class="form-control" ng-model="selectOptionA" ng-options="o.value as o.name for o in opcionesA"></select>
+                                        <input type="hidden" name="tipo_accesorio" ng-value="(opcionesA | filter:{value: selectOptionA})[0]?.name" />
                                         </select>
                                         
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de oficina -->
@@ -787,10 +791,10 @@
                             <label for="estilo">Color *</label>
                             <select id="estilo" name="color" required>
                                 <option value="">Selecciona un color</option>
-                                <option value="moderno">Marron</option>
-                                <option value="rustico">Negro</option>
-                                <option value="minimalista">Blanco</option>
-                                <option value="clasico">Rojo</option>
+                                <option value="Marron">Marron</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Blanco">Blanco</option>
+                                <option value="Rojo">Rojo</option>
                             </select>
                         </div>
                                               
