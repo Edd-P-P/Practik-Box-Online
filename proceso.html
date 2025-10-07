@@ -21,31 +21,26 @@
             color: white;
             margin-bottom: 3rem;
         }
-        
         .hero-proceso h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-
         /* Secciones generales */
         .section {
             padding: 5rem 0;
         }
-        
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
         .section-title h2 {
             font-size: 2.5rem;
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
         }
-        
         .section-title h2:after {
             content: '';
             position: absolute;
@@ -56,19 +51,16 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        
         /* Proceso de cotización */
         .proceso-cotizacion {
             background-color: var(--color-light);
         }
-        
         .pasos-proceso {
             display: flex;
             justify-content: space-between;
             margin-bottom: 3rem;
             flex-wrap: wrap;
         }
-        
         .paso {
             text-align: center;
             flex: 1;
@@ -79,11 +71,9 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-
         .paso p{
             text-align: justify;
         }
-        
         .paso-numero {
             display: inline-block;
             width: 50px;
@@ -97,22 +87,17 @@
             font-weight: bold;
             margin-bottom: 1rem;
         }
-
         .paso:hover{
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 150%);
             color: white;
         }
-
         .paso:hover h3{
             color: var(--color-neutral);
         } 
-
         .paso:hover .paso-numero{
             background: white;
             color: var(--color-primary);
-
         }
-
         /* Formulario de cotización */
         .formulario-cotizacion {
             background: white;
@@ -120,26 +105,21 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        
         .form-grid {
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
         }
-        
         .form-group {
             margin-bottom: 1.5rem;
         }
-        
         .form-group.full-width {
             grid-column: 1 / -1;
         }
-        
         label {
             margin-bottom: 0.5rem;
             font-weight: 600;
             color: var(--color-primary);
         }
-        
         input, select, textarea {
             width: 100%;
             padding: 0.8rem;
@@ -148,23 +128,19 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 1rem;
         }
-        
         textarea {
             min-height: 120px;
             resize: vertical;
         }
-
         .mueble-cocina{
             padding-left: 5%;
         }
-        
         .file-upload {
             position: relative;
             overflow: hidden;
             display: inline-block;
             width: 100%;
         }
-        
         .file-upload-btn {
             background: var(--color-light);
             border: 2px dashed var(--color-primary);
@@ -176,11 +152,9 @@
             width: 100%;
             transition: all 0.3s;
         }
-        
         .file-upload-btn:hover {
             background: var(--color-secondary);
         }
-        
         .file-upload input[type="file"] {
             position: absolute;
             left: 0;
@@ -190,13 +164,11 @@
             width: 100%;
             height: 100%;
         }
-              
         .btn-large {
             padding: 1rem 2rem;
             font-size: 1.1rem;
             border-color: var(--color-neutral);
         }
-            
         /* Tipos de madera */
         .maderas-grid {
             display: grid;
@@ -204,7 +176,6 @@
             gap: 2rem;
             margin-top: 3rem;
         }
-        
         .madera-card {
             text-align: center;
             padding: 2rem 1rem;
@@ -212,15 +183,12 @@
             border-radius: 10px;
             transition: transform 0.3s;
         }
-
         .madera-card p{
             text-align: justify;
         }
-        
         .madera-card:hover {
             transform: translateY(-5px);
         }
-        
         .madera-img {
             width: 100%;
             height: 150px;
@@ -228,25 +196,21 @@
             overflow: hidden;
             margin-bottom: 1rem;
         }
-        
         .madera-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-                
         /* FAQ */
         .faq-section {
             background: white;
         }
-        
         .faq-item {
             margin-bottom: 1.5rem;
             border: 1px solid #eee;
             border-radius: 5px;
             overflow: hidden;
         }
-        
         .faq-question {
             padding: 1.5rem;
             background: var(--color-light);
@@ -256,27 +220,22 @@
             align-items: center;
             font-weight: 600;
         }
-        
         .faq-answer {
             padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
         }
-        
         .faq-item.active .faq-answer {
             padding: 1.5rem;
             max-height: 500px;
         }
-        
         .faq-question i {
             transition: transform 0.3s;
         }
-        
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
         }
-
         /* Modal de agradecimiento */
         .modal-overlay {
             display: none;
@@ -290,7 +249,6 @@
             justify-content: center;
             align-items: center;
         }
-
         .modal-content {
             background: white;
             padding: 2.5rem;
@@ -300,24 +258,20 @@
             width: 90%;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-
         .modal-content i {
             font-size: 3.5rem;
             color: var(--color-accent);
             margin-bottom: 1.2rem;
         }
-
         .modal-content h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: #2c3e50;
         }
-
         .modal-content p {
             margin-bottom: 1.5rem;
             color: #555;
         }
-
         .btn-close {
             background: var(--color-primary);
             color: white;
@@ -328,45 +282,37 @@
             cursor: pointer;
             font-size: 1rem;
         }
-
         .btn-close:hover {
             background: var(--color-secondary);
         }
-
         /* ANIMACIONES */
-        
         /* Animaciones de entrada */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
         /* Animación para hero */
         .hero-proceso .hero-content {
             opacity: 0;
             transform: translateY(40px);
             animation: fadeInUp 1s ease 0.3s forwards;
         }
-        
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
         /* Animación para títulos de sección */
         .section-title h2 {
             position: relative;
             overflow: hidden;
         }
-        
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -377,141 +323,115 @@
             background: var(--color-primary);
             transition: width 0.8s ease;
         }
-        
         .section-title.animated h2::after {
             width: 100%;
         }
-        
         /* Animación para pasos del proceso */
         .paso {
             opacity: 0;
             transform: translateY(30px) scale(0.95);
             transition: all 0.6s ease;
         }
-        
         .paso.animated {
             opacity: 1;
             transform: translateY(0) scale(1);
         }
-        
         .paso:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
-        
         /* Animación para números de pasos */
         .paso-numero {
             transition: all 0.4s ease;
         }
-        
         .paso:hover .paso-numero {
             transform: scale(1.2) rotate(10deg);
         }
-        
         /* Animación para formulario */
         .form-group {
             transform: translateX(-20px);
             transition: all 0.5s ease;
         }
-        
         .form-group.animated {
             opacity: 1;
             transform: translateX(0);
         }
-        
         /* Animación para inputs del formulario */
         input, select, textarea {
             transition: all 0.3s ease;
         }
-        
         input:focus, select:focus, textarea:focus {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             border-color: var(--color-primary);
         }
-        
         /* Animación para botón de archivo */
         .file-upload-btn {
             transition: all 0.3s ease;
         }
-        
         .file-upload-btn:hover {
             transform: translateY(-3px);
             border-color: var(--color-accent);
         }      
-        
         /* Animación para tarjetas de estilos */
         .estilo-card {
             opacity: 0;
             transform: translateY(30px) rotateX(10deg);
             transition: all 0.6s ease;
         }
-        
         .estilo-card.animated {
             opacity: 1;
             transform: translateY(0) rotateX(0);
         }
-        
         .estilo-card:hover {
             transform: translateY(-10px) rotateX(0);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
-        
         /* Animación para tarjetas de maderas */
         .madera-card {
             opacity: 0;
             transform: scale(0.9);
             transition: all 0.5s ease;
         }
-        
         .madera-card.animated {
             opacity: 1;
             transform: scale(1);
         }
-        
         .madera-card:hover {
             transform: translateY(-8px) scale(1.05);
         }
-        
         /* Animación para FAQ */
         .faq-item {
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.5s ease;
         }
-        
         .faq-item.animated {
             opacity: 1;
             transform: translateY(0);
         }
-        
         .faq-question {
             transition: all 0.3s ease;
         }
-        
         .faq-item:hover .faq-question {
             background: var(--color-primary);
             color: white;
         }
-        
         /* Animación para modal */
         .modal-content {
             opacity: 0;
             transform: scale(0.8) translateY(-50px);
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        
         .modal-overlay[style*="display: flex"] .modal-content {
             opacity: 1;
             transform: scale(1) translateY(0);
         }
-        
         /* Animación para imágenes */
         .estilo-img, .madera-img {
             position: relative;
             overflow: hidden;
         }
-        
         .estilo-img::before, .madera-img::before {
             content: '';
             position: absolute;
@@ -528,18 +448,15 @@
             transition: left 0.8s ease;
             z-index: 1;
         }
-        
         .estilo-card:hover .estilo-img::before,
         .madera-card:hover .madera-img::before {
             left: 100%;
         }
-
         /* Animación de carga para el formulario */
         .btn-loading {
             position: relative;
             color: transparent;
         }
-        
         .btn-loading::after {
             content: '';
             position: absolute;
@@ -554,35 +471,28 @@
             border-top-color: transparent;
             animation: spin 1s ease-in-out infinite;
         }
-        
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-        
         /* Responsive */
         @media (max-width: 968px) {
             .form-grid {
                 grid-template-columns: 1fr;
             }
-            
             .pasos-proceso {
                 flex-direction: column;
             }
-            
             .paso {
                 margin: 1rem 0;
             }
         }
-        
         @media (max-width: 768px) {
             .hero-proceso h1 {
                 font-size: 2.5rem;
             }
-            
             .formulario-cotizacion {
                 padding: 2rem;
             }
-            
             .estilos-grid, .proyectos-grid {
                 grid-template-columns: 1fr;
             }
@@ -607,7 +517,6 @@
             </div>
         </div>
     </header>
-
     <!-- Hero Section para Proceso -->
     <section class="hero-proceso">
         <div class="container">
@@ -617,7 +526,6 @@
             </div>
         </div>
     </section>
-
     <!-- Proceso de cotización -->
     <section class="section proceso-cotizacion">
         <div class="container">
@@ -625,7 +533,6 @@
                 <h2>¿Cómo funciona nuestro proceso?</h2>
                 <p>Cuatro simples pasos para obtener tu cotización personalizada.</p>
             </div>
-            
             <div class="pasos-proceso">
                 <div class="paso">
                     <div class="paso-numero">1</div>
@@ -648,7 +555,6 @@
                     <p>Una vez aprobado y recibido el anticipo, comenzamos la fabricación de tu mueble.</p>
                 </div>
             </div>
-            
             <div class="formulario-cotizacion">
                 <h2 style="text-align: center; margin-bottom: 2rem;" class="fade-in">Solicita tu cotización</h2>
                 <form id="cotizacion-form">
@@ -658,24 +564,20 @@
                                 <div class="col-md-12">
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Tipo de mueble *</label>
+                                        <!-- SIN name -->
                                         <select class="form-control" ng-model="selectOption" ng-options="o.value as o.name for o in opciones" required></select>
-                                        <input type="hidden" name="tipo_mueble" ng-value="(opciones | filter:{value: selectOption})[0]?.name" />
                                     </div>
-
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 0" ng-cloak>
                                         <label class="control-label" >Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de closet" name="medidas_closet" readonly="readonly"/>
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de closet" name="presupuesto_closet" readonly="readonly" />                                       
                                     </div>
-
                                     <!-- Primer nivel: Tipo de mueble cocina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 1" ng-cloak>
                                         <label class="control-label">Tipo de mueble de cocina *</label>
+                                        <!-- SIN name -->
                                         <select class="form-control" ng-model="selectOptionC" ng-options="o.value as o.name for o in opcionesC"></select>
-                                        <input type="hidden" name="tipo_cocina" ng-value="(opcionesC | filter:{value: selectOptionC})[0]?.name" />
-                                        </select>
-                                        
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de cocina -->
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 5" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
@@ -683,55 +585,46 @@
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de cafetera" name="presupuesto_cafetera" readonly="readonly" />                                       
                                         </div>                                         
-
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 6" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de estanteria" name="medidas_estanteria" readonly="readonly" />
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de estanteria" name="presupuesto_estanteria" readonly="readonly" />                                       
                                         </div> 
-
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 7" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de gabinete" name="medidas_gabinete" readonly="readonly" />
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de gabinete" name="presupuesto_gabinete" readonly="readonly" />                                       
                                         </div>                                       
-
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 8" ng-cloak>
                                             <label class="control-label">Especifica el tipo de mueble de cocina *</label>
                                             <input type="text" class="form-control" placeholder="" name="otro_cocina">
                                         </div> 
                                     </div>                                    
-
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 2" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de muebles de baño" name="medidas_bano" readonly="readonly" />
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de baño" name="presupuesto_bano" readonly="readonly" />                                       
                                     </div>                                  
-
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 3" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de librero" name="medidas_librero" readonly="readonly" />
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de librero" name="presupuesto_librero" readonly="readonly" />                                       
                                     </div>
-
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 4" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de Armarios" name="medidas_armario" readonly="readonly" />
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de armario" name="presupuesto_armario" readonly="readonly" />                                       
                                     </div>
-
                                     <!-- Primer nivel: Tipo de mueble de oficina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 5" ng-cloak>
                                         <label class="control-label">Tipo de mueble de oficina *</label>
+                                        <!-- SIN name -->
                                         <select class="form-control" ng-model="selectOptionO" ng-options="o.value as o.name for o in opcionesO"></select>
-                                        <input type="hidden" name="tipo_oficina" ng-value="(opcionesO | filter:{value: selectOptionO})[0]?.name" />
-                                        </select>
-                                        
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de oficina -->
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionO == 0" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
@@ -739,54 +632,42 @@
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de Escritorio" name="presupuesto_escritorio" readonly="readonly" />                         
                                         </div>                                         
-
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionO == 1" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de estanteria" name="medidas_estanteria_oficina" readonly="readonly" />
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de estanteria" name="presupuesto_estanteria_oficina" readonly="readonly" />                                       
                                         </div> 
-
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionO == 2" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de gabinete" name="medidas_gabinete_oficina" readonly="readonly" />
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de gabinete" name="presupuesto_gabinete_oficina" readonly="readonly" />                                       
                                         </div>                                       
-
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOptionO == 3" ng-cloak>
                                         <label class="control-label">Especifica el tipo de mueble</label>
                                         <input type="text" class="form-control" placeholder="" name="otro_oficina">
                                     </div>
                                 </div>
-
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 6" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
                                         <input type="text" placeholder="Medidas de pergola" name="medidas_pergola" readonly="readonly"/>
                                         <label class="control-label">Presupuesto</label>
                                         <input type="text" placeholder="Presupuesto de pergola" name="presupuesto_pergola" readonly="readonly"/>                                       
                                     </div>
-
-
-                                    <!-- Primer nivel: Tipo de accesorio -->
+                                    <!-- Primer nivel: Tipo de mueble de accesorio -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 7" ng-cloak>
                                         <label class="control-label">Tipo de accesorio *</label>
+                                        <!-- SIN name -->
                                         <select class="form-control" ng-model="selectOptionA" ng-options="o.value as o.name for o in opcionesA"></select>
-                                        <input type="hidden" name="tipo_accesorio" ng-value="(opcionesA | filter:{value: selectOptionA})[0]?.name" />
-                                        </select>
-                                        
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de oficina -->
-                                  
-
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOptionA == 9" ng-cloak>
                                         <label class="control-label">Especifica el tipo de Accesorio</label>
                                         <input type="text" class="form-control" placeholder="" name="otro_accesorio">
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                        
                         <div class="form-group">
                             <label for="estilo">Color *</label>
                             <select id="estilo" name="color" required>
@@ -797,22 +678,18 @@
                                 <option value="Rojo">Rojo</option>
                             </select>
                         </div>
-                                              
                         <div class="form-group">
                             <label for="nombre">Nombre completo *</label>
                             <input type="text" id="nombre" name="nombre" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="email">Correo electrónico *</label>
                             <input type="email" id="email" name="email" autocomplete="on" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="telefono">Teléfono de contacto *</label>
                             <input type="tel" id="telefono" name="telefono" required>
                         </div>
-            
                         <div class="form-group full-width" style="text-align: center; margin-top: 2rem;">
                             <button type="submit" class="btn btn-large">Enviar solicitud de cotización</button>
                         </div>
@@ -821,7 +698,6 @@
             </div>
         </div>
     </section>
-
     <!-- Preguntas frecuentes -->
     <section class="section faq-section">
         <div class="container">
@@ -829,7 +705,6 @@
                 <h2>Preguntas frecuentes sobre cotizaciones</h2>
                 <p>Resolvemos tus dudas sobre el proceso de cotización</p>
             </div>
-            
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
@@ -840,7 +715,6 @@
                         <p>Normalmente, procesamos las solicitudes en un plazo de 2 a 3 días hábiles. Para proyectos complejos que requieren diseño personalizado, el tiempo puede extenderse hasta 5 días hábiles.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>¿La cotización tiene algún costo?</span>
@@ -851,7 +725,6 @@
                             Si requieres planos detallados o maquetas en 3D tendrá un costo adicional, que será informado previamente.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>¿Puedo modificar mi cotización después de recibirla?</span>
@@ -861,7 +734,6 @@
                         <p>Sí, puedes solicitar ajustes en materiales, dimensiones o diseño. Revisaremos los cambios y emitiremos una cotización más sin costo adicional.</p>
                     </div>
                 </div>
-                
                 <div class="faq-item">
                     <div class="faq-question">
                         <span>¿Qué incluye la cotización?</span>
@@ -874,7 +746,6 @@
             </div>
         </div>
     </section>
-
     <!-- Sección: En Dónde Estamos -->
     <section class="contact-section" id="contacto">
         <div class="container">
@@ -918,7 +789,6 @@
                                     </p>
                                 </div>
                             </div>
-
                             <div class="contact-item whatsapp-item">
                                 <div class="contact-icon contact-whatsapp-icon">
                                     <i class="fab fa-whatsapp"></i>
@@ -930,7 +800,6 @@
                                     </p>
                                 </div>
                             </div>
-
                             <div class="contact-item">
                                 <div class="contact-icon">
                                     <i class="fas fa-envelope"></i>
@@ -956,13 +825,11 @@
             </div>
         </div>
     </section>
-
     <button class="btn-scroll-top" aria-label="Volver arriba">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 4l-8 8h5v8h6v-8h5z"/>
         </svg>
     </button>
-
     <!-- Modal de agradecimiento -->
     <div class="modal-overlay" id="graciasModal">
         <div class="modal-content">
@@ -977,7 +844,6 @@
             <button class="btn-close" onclick="cerrarModal()">Cerrar</button>
         </div>
     </div>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1023,13 +889,11 @@
             </div>
         </div>
     </footer>
-
     <script>
         // Cerrar modal
         function cerrarModal() {
             document.getElementById('graciasModal').style.display = 'none';
         }
-
         // FAQ acordeón
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
@@ -1037,38 +901,87 @@
                 item.classList.toggle('active');
             });
         });
-
-        // Envío del formulario con AJAX a FormSubmit
+        // ✅ NUEVA FUNCIÓN DE ENVÍO (con nombres legibles)
         document.getElementById('cotizacion-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-
-            // Validación básica
             const requiredFields = ['nombre', 'email', 'telefono', 'color'];
             let isValid = true;
-            
             for (let field of requiredFields) {
-                const fieldElement = document.querySelector(`[name="${field}"]`);
-                if (fieldElement && !fieldElement.value.trim()) {
+                const el = document.querySelector(`[name="${field}"]`);
+                if (el && !el.value.trim()) {
                     alert('Por favor, completa todos los campos obligatorios (*).');
                     isValid = false;
                     break;
                 }
             }
-
             if (!isValid) return;
 
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
-            
-            // Mostrar estado de carga
             submitBtn.innerHTML = 'Enviando...';
             submitBtn.classList.add('btn-loading');
             submitBtn.disabled = true;
 
-            // Crear FormData del formulario
-            const formData = new FormData(this);
-            
-            // Agregar información adicional para FormSubmit
+            // Acceder al scope de Angular
+            const ctrlEl = document.querySelector('[ng-controller="ctrl"]');
+            const scope = angular.element(ctrlEl).scope();
+
+            const formData = new FormData();
+
+            // Campos básicos
+            formData.append('nombre', document.querySelector('[name="nombre"]').value.trim());
+            formData.append('email', document.querySelector('[name="email"]').value.trim());
+            formData.append('telefono', document.querySelector('[name="telefono"]').value.trim());
+            formData.append('color', document.querySelector('[name="color"]').value.trim());
+
+            // Tipo de mueble principal
+            if (scope.selectOption !== null && scope.selectOption !== undefined) {
+                const item = scope.opciones.find(o => o.value === scope.selectOption);
+                if (item) formData.append('tipo_mueble', item.name);
+            }
+
+            // Subtipos (solo si corresponden)
+            if (scope.selectOption === 1 && scope.selectOptionC !== null) {
+                const item = scope.opcionesC.find(o => o.value === scope.selectOptionC);
+                if (item) formData.append('tipo_cocina', item.name);
+            }
+
+            if (scope.selectOption === 5 && scope.selectOptionO !== null) {
+                const item = scope.opcionesO.find(o => o.value === scope.selectOptionO);
+                if (item) formData.append('tipo_oficina', item.name);
+            }
+
+            if (scope.selectOption === 7 && scope.selectOptionA !== null) {
+                const item = scope.opcionesA.find(o => o.value === scope.selectOptionA);
+                if (item) formData.append('tipo_accesorio', item.name);
+            }
+
+            // Campos adicionales (solo si tienen valor)
+            const extraFields = [
+                'medidas_closet', 'presupuesto_closet',
+                'medidas_cafetera', 'presupuesto_cafetera',
+                'medidas_estanteria', 'presupuesto_estanteria',
+                'medidas_gabinete', 'presupuesto_gabinete',
+                'otro_cocina',
+                'medidas_bano', 'presupuesto_bano',
+                'medidas_librero', 'presupuesto_librero',
+                'medidas_armario', 'presupuesto_armario',
+                'medidas_escritorio', 'presupuesto_escritorio',
+                'medidas_estanteria_oficina', 'presupuesto_estanteria_oficina',
+                'medidas_gabinete_oficina', 'presupuesto_gabinete_oficina',
+                'otro_oficina',
+                'medidas_pergola', 'presupuesto_pergola',
+                'otro_accesorio'
+            ];
+
+            extraFields.forEach(name => {
+                const el = document.querySelector(`[name="${name}"]`);
+                if (el && el.value.trim()) {
+                    formData.append(name, el.value.trim());
+                }
+            });
+
+            // Configuración de FormSubmit
             formData.append('_subject', 'Nueva solicitud de cotización - PRACTIK-BOX');
             formData.append('_template', 'table');
             formData.append('_captcha', 'false');
@@ -1082,27 +995,21 @@
                 if (response.ok) {
                     document.getElementById('graciasModal').style.display = 'flex';
                     this.reset();
-                    
-                    // Resetear Angular models
-                    if (typeof angular !== 'undefined') {
-                        var scope = angular.element(document.querySelector('[ng-controller="ctrl"]')).scope();
-                        if (scope) {
-                            scope.$apply(function() {
-                                scope.selectOption = null;
-                                scope.selectOptionC = null;
-                                scope.selectOptionO = null;
-                                scope.selectOptionA = null;
-                            });
-                        }
-                    }
+
+                    // Resetear Angular
+                    scope.$apply(() => {
+                        scope.selectOption = null;
+                        scope.selectOptionC = null;
+                        scope.selectOptionO = null;
+                        scope.selectOptionA = null;
+                    });
                 } else {
-                    alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+                    alert('Error al enviar. Inténtalo de nuevo.');
                 }
-            } catch (error) {
-                alert('Error de conexión. Verifica tu internet e inténtalo de nuevo.');
-                console.error('Error:', error);
+            } catch (err) {
+                alert('Error de conexión. Verifica tu internet.');
+                console.error(err);
             } finally {
-                // Restaurar botón
                 submitBtn.innerHTML = originalText;
                 submitBtn.classList.remove('btn-loading');
                 submitBtn.disabled = false;
@@ -1120,23 +1027,17 @@
             const faqItems = document.querySelectorAll('.faq-item');
             const mapVisual = document.querySelector('.map-visual');
             const contactInfo = document.querySelector('.contact-info-section');
-            
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             };
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        
-                        // Animación para títulos de sección
                         if (entry.target.classList.contains('section-title')) {
                             entry.target.classList.add('animated');
                         }
-                        
-                        // Animación escalonada para pasos
                         if (entry.target.classList.contains('pasos-proceso')) {
                             pasos.forEach((paso, index) => {
                                 setTimeout(() => {
@@ -1144,8 +1045,6 @@
                                 }, index * 200);
                             });
                         }
-                        
-                        // Animación escalonada para formulario
                         if (entry.target.classList.contains('form-grid')) {
                             formGroups.forEach((group, index) => {
                                 setTimeout(() => {
@@ -1153,8 +1052,6 @@
                                 }, index * 100);
                             });
                         }
-                        
-                        // Animación para tarjetas de estilos
                         if (entry.target.classList.contains('estilos-grid')) {
                             estiloCards.forEach((card, index) => {
                                 setTimeout(() => {
@@ -1162,8 +1059,6 @@
                                 }, index * 150);
                             });
                         }
-                        
-                        // Animación para tarjetas de maderas
                         if (entry.target.classList.contains('maderas-grid')) {
                             maderaCards.forEach((card, index) => {
                                 setTimeout(() => {
@@ -1171,8 +1066,6 @@
                                 }, index * 100);
                             });
                         }
-                        
-                        // Animación para FAQ
                         if (entry.target.classList.contains('faq-container')) {
                             faqItems.forEach((item, index) => {
                                 setTimeout(() => {
@@ -1180,13 +1073,10 @@
                                 }, index * 100);
                             });
                         }
-                        
-                        // Animación para mapa y contacto
                         if (entry.target.classList.contains('contact-content')) {
                             setTimeout(() => {
                                 if (mapVisual) mapVisual.classList.add('animated');
                             }, 300);
-                         
                             setTimeout(() => {
                                 if (contactInfo) contactInfo.classList.add('animated');
                             }, 600);
@@ -1195,8 +1085,6 @@
                 });
             }, observerOptions);
 
-            
-            // Observar elementos para animaciones
             fadeElements.forEach(el => observer.observe(el));
             sectionTitles.forEach(title => observer.observe(title));
             document.querySelector('.pasos-proceso') && observer.observe(document.querySelector('.pasos-proceso'));
@@ -1205,8 +1093,7 @@
             document.querySelector('.maderas-grid') && observer.observe(document.querySelector('.maderas-grid'));
             document.querySelector('.faq-container') && observer.observe(document.querySelector('.faq-container'));
             document.querySelector('.contact-content') && observer.observe(document.querySelector('.contact-content'));
-            
-            // Activar animaciones para elementos ya visibles al cargar
+
             setTimeout(() => {
                 fadeElements.forEach(el => {
                     const rect = el.getBoundingClientRect();
@@ -1220,52 +1107,46 @@
         var myApp = angular.module('myApp', []);
         myApp.controller('ctrl', ['$scope', function($scope){
             $scope.opciones = [
-        { value: 0, name: 'Closet o vestidor' },
-        { value: 1, name: 'Muebles de cocina' },
-        { value: 2, name: 'Muebles de baño' },
-        { value: 3, name: 'Libreria o repisa' },
-        { value: 4, name: 'Armarios'},
-        { value: 5, name: 'Muebles de oficina'},
-        { value: 6, name: 'Pergola'},
-        { value: 7, name: 'Accesorios'},
-        ];
-        $scope.selectOption = null;
-
-        //Muebles cocina
+                { value: 0, name: 'Closet o vestidor' },
+                { value: 1, name: 'Muebles de cocina' },
+                { value: 2, name: 'Muebles de baño' },
+                { value: 3, name: 'Libreria o repisa' },
+                { value: 4, name: 'Armarios'},
+                { value: 5, name: 'Muebles de oficina'},
+                { value: 6, name: 'Pergola'},
+                { value: 7, name: 'Accesorios'},
+            ];
+            $scope.selectOption = null;
 
             $scope.opcionesC = [
-        { value: 5, name: 'Mueble para cafetera' },
-        { value: 6, name: 'Estanterias' },
-        { value: 7, name: 'gabinetes' },
-        { value: 8, name: 'Otro'}
-        ];
-        $scope.selectOptionC = null;
+                { value: 5, name: 'Mueble para cafetera' },
+                { value: 6, name: 'Estanterias' },
+                { value: 7, name: 'gabinetes' },
+                { value: 8, name: 'Otro'}
+            ];
+            $scope.selectOptionC = null;
 
-        //Muebles Oficina
             $scope.opcionesO = [
-        { value: 0, name: 'Escritorios' },
-        { value: 1, name: 'Estanterias' },
-        { value: 2, name: 'gabinetes' },
-        { value: 3, name: 'Otro'}
-        ];
-        $scope.selectOptionO = null;
+                { value: 0, name: 'Escritorios' },
+                { value: 1, name: 'Estanterias' },
+                { value: 2, name: 'gabinetes' },
+                { value: 3, name: 'Otro'}
+            ];
+            $scope.selectOptionO = null;
 
-        //Accsesorios
             $scope.opcionesA = [
-        { value: 0, name: 'Cajas de té' },
-        { value: 1, name: 'Tablas' },
-        { value: 2, name: 'Centro de mesa' },
-        { value: 3, name: 'Banquito'},
-        { value: 4, name: 'Bote de basura'},   
-        { value: 5, name: 'Macetas'},
-        { value: 6, name: 'Porta huevos'},
-        { value: 7, name: 'Tablas para baguette'},
-        { value: 8, name: 'Soporte para velas'},   
-        { value: 9, name: 'Otros'},
-        ];
-        $scope.selectOptionA = null;
-
-
+                { value: 0, name: 'Cajas de té' },
+                { value: 1, name: 'Tablas' },
+                { value: 2, name: 'Centro de mesa' },
+                { value: 3, name: 'Banquito'},
+                { value: 4, name: 'Bote de basura'},   
+                { value: 5, name: 'Macetas'},
+                { value: 6, name: 'Porta huevos'},
+                { value: 7, name: 'Tablas para baguette'},
+                { value: 8, name: 'Soporte para velas'},   
+                { value: 9, name: 'Otros'},
+            ];
+            $scope.selectOptionA = null;
         }]);
     </script>
     <script src="app.js"></script>
