@@ -901,7 +901,7 @@
                 item.classList.toggle('active');
             });
         });
-        // ✅ NUEVA FUNCIÓN DE ENVÍO (con nombres legibles)
+        // ✅ NUEVA FUNCIÓN DE ENVÍO (con nombres legibles y subtipos)
         document.getElementById('cotizacion-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             const requiredFields = ['nombre', 'email', 'telefono', 'color'];
@@ -940,23 +940,25 @@
                 if (item) formData.append('tipo_mueble', item.name);
             }
 
-            // Subtipos (solo si corresponden)
+            // Subtipo: cocina
             if (scope.selectOption === 1 && scope.selectOptionC !== null) {
                 const item = scope.opcionesC.find(o => o.value === scope.selectOptionC);
                 if (item) formData.append('tipo_cocina', item.name);
             }
 
+            // Subtipo: oficina
             if (scope.selectOption === 5 && scope.selectOptionO !== null) {
                 const item = scope.opcionesO.find(o => o.value === scope.selectOptionO);
                 if (item) formData.append('tipo_oficina', item.name);
             }
 
+            // Subtipo: accesorios
             if (scope.selectOption === 7 && scope.selectOptionA !== null) {
                 const item = scope.opcionesA.find(o => o.value === scope.selectOptionA);
                 if (item) formData.append('tipo_accesorio', item.name);
             }
 
-            // Campos adicionales (solo si tienen valor)
+            // Campos adicionales
             const extraFields = [
                 'medidas_closet', 'presupuesto_closet',
                 'medidas_cafetera', 'presupuesto_cafetera',
