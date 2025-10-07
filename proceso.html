@@ -564,8 +564,9 @@
                                 <div class="col-md-12">
                                     <div class="form-group col-md-6">
                                         <label class="control-label">Tipo de mueble *</label>
-                                        <!-- SIN name -->
+                                        <!-- ✅ CAMBIO 1: select sin name + input hidden -->
                                         <select class="form-control" ng-model="selectOption" ng-options="o.value as o.name for o in opciones" required></select>
+                                        <input type="hidden" name="tipo_mueble" ng-value="(opciones | filter:{value: selectOption})[0]?.name" />
                                     </div>
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 0" ng-cloak>
                                         <label class="control-label" >Medidas aproximadas (ancho x alto x profundidad en cm)</label>
@@ -576,8 +577,9 @@
                                     <!-- Primer nivel: Tipo de mueble cocina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 1" ng-cloak>
                                         <label class="control-label">Tipo de mueble de cocina *</label>
-                                        <!-- SIN name -->
+                                        <!-- ✅ CAMBIO 2: select sin name + input hidden -->
                                         <select class="form-control" ng-model="selectOptionC" ng-options="o.value as o.name for o in opcionesC"></select>
+                                        <input type="hidden" name="tipo_cocina" ng-value="(opcionesC | filter:{value: selectOptionC})[0]?.name" />
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de cocina -->
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 5" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
@@ -623,8 +625,9 @@
                                     <!-- Primer nivel: Tipo de mueble de oficina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 5" ng-cloak>
                                         <label class="control-label">Tipo de mueble de oficina *</label>
-                                        <!-- SIN name -->
+                                        <!-- ✅ CAMBIO 3: select sin name + input hidden -->
                                         <select class="form-control" ng-model="selectOptionO" ng-options="o.value as o.name for o in opcionesO"></select>
+                                        <input type="hidden" name="tipo_oficina" ng-value="(opcionesO | filter:{value: selectOptionO})[0]?.name" />
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de oficina -->
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionO == 0" ng-cloak>
                                         <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
@@ -658,8 +661,9 @@
                                     <!-- Primer nivel: Tipo de mueble de accesorio -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 7" ng-cloak>
                                         <label class="control-label">Tipo de accesorio *</label>
-                                        <!-- SIN name -->
+                                        <!-- ✅ CAMBIO 4: select sin name + input hidden -->
                                         <select class="form-control" ng-model="selectOptionA" ng-options="o.value as o.name for o in opcionesA"></select>
+                                        <input type="hidden" name="tipo_accesorio" ng-value="(opcionesA | filter:{value: selectOptionA})[0]?.name" />
                                         <!-- Segundo nivel: Dependiendo del tipo de mueble de oficina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOptionA == 9" ng-cloak>
                                         <label class="control-label">Especifica el tipo de Accesorio</label>
@@ -901,123 +905,66 @@
                 item.classList.toggle('active');
             });
         });
-        // ✅ NUEVA FUNCIÓN DE ENVÍO (con nombres legibles y subtipos)
+        // Envío del formulario con AJAX a FormSubmit
         document.getElementById('cotizacion-form').addEventListener('submit', async function(e) {
             e.preventDefault();
+            // Validación básica
             const requiredFields = ['nombre', 'email', 'telefono', 'color'];
             let isValid = true;
             for (let field of requiredFields) {
-                const el = document.querySelector(`[name="${field}"]`);
-                if (el && !el.value.trim()) {
+                const fieldElement = document.querySelector(`[name="${field}"]`);
+                if (fieldElement && !fieldElement.value.trim()) {
                     alert('Por favor, completa todos los campos obligatorios (*).');
                     isValid = false;
                     break;
                 }
             }
             if (!isValid) return;
-
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
+            // Mostrar estado de carga
             submitBtn.innerHTML = 'Enviando...';
             submitBtn.classList.add('btn-loading');
             submitBtn.disabled = true;
-
-            // Acceder al scope de Angular
-            const ctrlEl = document.querySelector('[ng-controller="ctrl"]');
-            const scope = angular.element(ctrlEl).scope();
-
-            const formData = new FormData();
-
-            // Campos básicos
-            formData.append('nombre', document.querySelector('[name="nombre"]').value.trim());
-            formData.append('email', document.querySelector('[name="email"]').value.trim());
-            formData.append('telefono', document.querySelector('[name="telefono"]').value.trim());
-            formData.append('color', document.querySelector('[name="color"]').value.trim());
-
-            // Tipo de mueble principal
-            if (scope.selectOption !== null && scope.selectOption !== undefined) {
-                const item = scope.opciones.find(o => o.value === scope.selectOption);
-                if (item) formData.append('tipo_mueble', item.name);
-            }
-
-            // Subtipo: cocina
-            if (scope.selectOption === 1 && scope.selectOptionC !== null) {
-                const item = scope.opcionesC.find(o => o.value === scope.selectOptionC);
-                if (item) formData.append('tipo_cocina', item.name);
-            }
-
-            // Subtipo: oficina
-            if (scope.selectOption === 5 && scope.selectOptionO !== null) {
-                const item = scope.opcionesO.find(o => o.value === scope.selectOptionO);
-                if (item) formData.append('tipo_oficina', item.name);
-            }
-
-            // Subtipo: accesorios
-            if (scope.selectOption === 7 && scope.selectOptionA !== null) {
-                const item = scope.opcionesA.find(o => o.value === scope.selectOptionA);
-                if (item) formData.append('tipo_accesorio', item.name);
-            }
-
-            // Campos adicionales
-            const extraFields = [
-                'medidas_closet', 'presupuesto_closet',
-                'medidas_cafetera', 'presupuesto_cafetera',
-                'medidas_estanteria', 'presupuesto_estanteria',
-                'medidas_gabinete', 'presupuesto_gabinete',
-                'otro_cocina',
-                'medidas_bano', 'presupuesto_bano',
-                'medidas_librero', 'presupuesto_librero',
-                'medidas_armario', 'presupuesto_armario',
-                'medidas_escritorio', 'presupuesto_escritorio',
-                'medidas_estanteria_oficina', 'presupuesto_estanteria_oficina',
-                'medidas_gabinete_oficina', 'presupuesto_gabinete_oficina',
-                'otro_oficina',
-                'medidas_pergola', 'presupuesto_pergola',
-                'otro_accesorio'
-            ];
-
-            extraFields.forEach(name => {
-                const el = document.querySelector(`[name="${name}"]`);
-                if (el && el.value.trim()) {
-                    formData.append(name, el.value.trim());
-                }
-            });
-
-            // Configuración de FormSubmit
+            // Crear FormData del formulario
+            const formData = new FormData(this);
+            // Agregar información adicional para FormSubmit
             formData.append('_subject', 'Nueva solicitud de cotización - PRACTIK-BOX');
             formData.append('_template', 'table');
             formData.append('_captcha', 'false');
-
             try {
                 const response = await fetch('https://formsubmit.co/ajax/ea439921@gmail.com', {
                     method: 'POST',
                     body: formData
                 });
-
                 if (response.ok) {
                     document.getElementById('graciasModal').style.display = 'flex';
                     this.reset();
-
-                    // Resetear Angular
-                    scope.$apply(() => {
-                        scope.selectOption = null;
-                        scope.selectOptionC = null;
-                        scope.selectOptionO = null;
-                        scope.selectOptionA = null;
-                    });
+                    // Resetear Angular models
+                    if (typeof angular !== 'undefined') {
+                        var scope = angular.element(document.querySelector('[ng-controller="ctrl"]')).scope();
+                        if (scope) {
+                            scope.$apply(function() {
+                                scope.selectOption = null;
+                                scope.selectOptionC = null;
+                                scope.selectOptionO = null;
+                                scope.selectOptionA = null;
+                            });
+                        }
+                    }
                 } else {
-                    alert('Error al enviar. Inténtalo de nuevo.');
+                    alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
                 }
-            } catch (err) {
-                alert('Error de conexión. Verifica tu internet.');
-                console.error(err);
+            } catch (error) {
+                alert('Error de conexión. Verifica tu internet e inténtalo de nuevo.');
+                console.error('Error:', error);
             } finally {
+                // Restaurar botón
                 submitBtn.innerHTML = originalText;
                 submitBtn.classList.remove('btn-loading');
                 submitBtn.disabled = false;
             }
         });
-
         // Animación de elementos al hacer scroll
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
@@ -1037,9 +984,11 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        // Animación para títulos de sección
                         if (entry.target.classList.contains('section-title')) {
                             entry.target.classList.add('animated');
                         }
+                        // Animación escalonada para pasos
                         if (entry.target.classList.contains('pasos-proceso')) {
                             pasos.forEach((paso, index) => {
                                 setTimeout(() => {
@@ -1047,6 +996,7 @@
                                 }, index * 200);
                             });
                         }
+                        // Animación escalonada para formulario
                         if (entry.target.classList.contains('form-grid')) {
                             formGroups.forEach((group, index) => {
                                 setTimeout(() => {
@@ -1054,6 +1004,7 @@
                                 }, index * 100);
                             });
                         }
+                        // Animación para tarjetas de estilos
                         if (entry.target.classList.contains('estilos-grid')) {
                             estiloCards.forEach((card, index) => {
                                 setTimeout(() => {
@@ -1061,6 +1012,7 @@
                                 }, index * 150);
                             });
                         }
+                        // Animación para tarjetas de maderas
                         if (entry.target.classList.contains('maderas-grid')) {
                             maderaCards.forEach((card, index) => {
                                 setTimeout(() => {
@@ -1068,6 +1020,7 @@
                                 }, index * 100);
                             });
                         }
+                        // Animación para FAQ
                         if (entry.target.classList.contains('faq-container')) {
                             faqItems.forEach((item, index) => {
                                 setTimeout(() => {
@@ -1075,6 +1028,7 @@
                                 }, index * 100);
                             });
                         }
+                        // Animación para mapa y contacto
                         if (entry.target.classList.contains('contact-content')) {
                             setTimeout(() => {
                                 if (mapVisual) mapVisual.classList.add('animated');
@@ -1086,7 +1040,7 @@
                     }
                 });
             }, observerOptions);
-
+            // Observar elementos para animaciones
             fadeElements.forEach(el => observer.observe(el));
             sectionTitles.forEach(title => observer.observe(title));
             document.querySelector('.pasos-proceso') && observer.observe(document.querySelector('.pasos-proceso'));
@@ -1095,7 +1049,7 @@
             document.querySelector('.maderas-grid') && observer.observe(document.querySelector('.maderas-grid'));
             document.querySelector('.faq-container') && observer.observe(document.querySelector('.faq-container'));
             document.querySelector('.contact-content') && observer.observe(document.querySelector('.contact-content'));
-
+            // Activar animaciones para elementos ya visibles al cargar
             setTimeout(() => {
                 fadeElements.forEach(el => {
                     const rect = el.getBoundingClientRect();
@@ -1105,50 +1059,49 @@
                 });
             }, 100);
         });
-
         var myApp = angular.module('myApp', []);
         myApp.controller('ctrl', ['$scope', function($scope){
             $scope.opciones = [
-                { value: 0, name: 'Closet o vestidor' },
-                { value: 1, name: 'Muebles de cocina' },
-                { value: 2, name: 'Muebles de baño' },
-                { value: 3, name: 'Libreria o repisa' },
-                { value: 4, name: 'Armarios'},
-                { value: 5, name: 'Muebles de oficina'},
-                { value: 6, name: 'Pergola'},
-                { value: 7, name: 'Accesorios'},
-            ];
-            $scope.selectOption = null;
-
+        { value: 0, name: 'Closet o vestidor' },
+        { value: 1, name: 'Muebles de cocina' },
+        { value: 2, name: 'Muebles de baño' },
+        { value: 3, name: 'Libreria o repisa' },
+        { value: 4, name: 'Armarios'},
+        { value: 5, name: 'Muebles de oficina'},
+        { value: 6, name: 'Pergola'},
+        { value: 7, name: 'Accesorios'},
+        ];
+        $scope.selectOption = null;
+        //Muebles cocina
             $scope.opcionesC = [
-                { value: 5, name: 'Mueble para cafetera' },
-                { value: 6, name: 'Estanterias' },
-                { value: 7, name: 'gabinetes' },
-                { value: 8, name: 'Otro'}
-            ];
-            $scope.selectOptionC = null;
-
+        { value: 5, name: 'Mueble para cafetera' },
+        { value: 6, name: 'Estanterias' },
+        { value: 7, name: 'gabinetes' },
+        { value: 8, name: 'Otro'}
+        ];
+        $scope.selectOptionC = null;
+        //Muebles Oficina
             $scope.opcionesO = [
-                { value: 0, name: 'Escritorios' },
-                { value: 1, name: 'Estanterias' },
-                { value: 2, name: 'gabinetes' },
-                { value: 3, name: 'Otro'}
-            ];
-            $scope.selectOptionO = null;
-
+        { value: 0, name: 'Escritorios' },
+        { value: 1, name: 'Estanterias' },
+        { value: 2, name: 'gabinetes' },
+        { value: 3, name: 'Otro'}
+        ];
+        $scope.selectOptionO = null;
+        //Accsesorios
             $scope.opcionesA = [
-                { value: 0, name: 'Cajas de té' },
-                { value: 1, name: 'Tablas' },
-                { value: 2, name: 'Centro de mesa' },
-                { value: 3, name: 'Banquito'},
-                { value: 4, name: 'Bote de basura'},   
-                { value: 5, name: 'Macetas'},
-                { value: 6, name: 'Porta huevos'},
-                { value: 7, name: 'Tablas para baguette'},
-                { value: 8, name: 'Soporte para velas'},   
-                { value: 9, name: 'Otros'},
-            ];
-            $scope.selectOptionA = null;
+        { value: 0, name: 'Cajas de té' },
+        { value: 1, name: 'Tablas' },
+        { value: 2, name: 'Centro de mesa' },
+        { value: 3, name: 'Banquito'},
+        { value: 4, name: 'Bote de basura'},   
+        { value: 5, name: 'Macetas'},
+        { value: 6, name: 'Porta huevos'},
+        { value: 7, name: 'Tablas para baguette'},
+        { value: 8, name: 'Soporte para velas'},   
+        { value: 9, name: 'Otros'},
+        ];
+        $scope.selectOptionA = null;
         }]);
     </script>
     <script src="app.js"></script>

@@ -1202,7 +1202,7 @@
                         <p>${producto.descripcion}</p>
                         ${id === '8' 
                             ? '<a href="accesorios.html" class="btn btn-outline">Ver accesorios</a>' 
-                            : '<button class="btn btn-outline btn-ver-detalles" data-producto-id="' + id + '">Ver detalles</button>'
+                            : '<button class="btn btn-outline btn-ver-detalles " data-producto-id="' + id + '">Ver detalles</button>'
                         }
                     </div>
                 `;
@@ -1472,6 +1472,8 @@
                 document.getElementById('hero-productos').style.display = 'flex';
                 document.getElementById('info-extra').style.display = 'block';
             }
+
+            
 
         // MANEJAR NAVEGACIÓN CON BOTONES ATRÁS/ADELANTE
         window.addEventListener('popstate', function() {
