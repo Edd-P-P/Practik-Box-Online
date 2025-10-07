@@ -1175,12 +1175,28 @@
                     <div class="categoria-content">
                         <h3>${producto.nombre}</h3>
                         <p>${producto.descripcion}</p>
-                        <button class="btn btn-outline" onclick="cargarProducto(${id})">Ver Detalles</button>
+                        <button class="btn btn-outline btn-ver-detalles" onclick="cargarProducto(${id})">Ver Detalles</button>
                     </div>
                 `;
                 contenedor.appendChild(productoElement);
             });
-        }
+                // Agregar eventos a los botones de "Ver Detalles"
+                document.querySelectorAll('.btn-ver-detalles').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const productId = this.getAttribute('data-producto-id');
+                cargarProducto(productId);
+                
+                // Desplazar suavemente hacia la parte superior de la página
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
+
         // CARGAR DETALLES DEL PRODUCTO 
         function cargarProducto(id) {
             const producto = accesorios[id];
