@@ -5,7 +5,7 @@ const productos = {
         imagenes: [ 
            "Imagenes/Productos/Closets y Vestidores.jpg",
             "Imagenes/Productos/Closets y Vestidores1.jpg",
-            "Imagenes/Productos/Closets y Vestidores2.png"
+            "Imagenes/Productos/Closets y Vestidores2.jpg"
         ],
         caracteristicas: [
             "Hechos a medida según el espacio disponible.",
@@ -34,7 +34,7 @@ const productos = {
         descripcion: 'Muebles resistentes a la humedad con diseños modernos.',
         imagenes: [
             "Imagenes/Productos/Mueble de baño.jpg",
-            "Imagenes/Productos/Mueble de baño1.png",
+            "Imagenes/Productos/mueble de baño1.jpg",
             "Imagenes/Productos/Mueble de baño2.png"
         ],
         caracteristicas: [
@@ -60,10 +60,10 @@ const productos = {
     },
     
     5: {
-        nombre: 'Armarios',
-        descripcion: 'Ideales para organizar ropa, calzado y accesorios con estilo y orden.',
+        nombre: 'Centro de TV',
+        descripcion: 'Diseños modernos y funcionales para tu entretenimiento.',
         imagenes: [
-            "Imagenes/Productos/Armarios Altos.jpeg",
+            "Imagenes/Productos/centrotv.png",
             "Imagenes/Productos/Armario1.jpg",
             "Imagenes/Productos/Armario2.png"
         ],
@@ -189,14 +189,13 @@ const accesorios = {
         ]
     }, 
 
-    8: {
-        nombre: 'Tablas para baguette',
-        descripcion: 'Tablas alargadas en madera natural, ideales para servir baguettes, pan artesanal o quesos. Resistente, ligera y con acabado suave al tacto.',
+    8:{
+        nombre: 'Percheros',
+        descripcion: 'Percheros de madera con diseño funcional y estético. Ideales para mantener el orden en la entrada de tu hogar.',
         imagenes: [ 
-            "Imagenes/Productos/accesorios/Tablas para baguette.jpg",
-            "Imagenes/Productos/accesorios/Tablas para baguette1.jpg",
-            "Imagenes/Productos/accesorios/Tablas para baguette2.jpg"
-
+            "Imagenes/Productos/accesorios/percheros.jpg",
+            "Imagenes/Productos/accesorios/percheros1.jpg",
+            "Imagenes/Productos/accesorios/percheros2.jpg"
         ]
     },
 
@@ -208,5 +207,5 @@ const accesorios = {
             "Imagenes/Productos/accesorios/soporte de velas1.jpg",
             "Imagenes/Productos/accesorios/soporte de velas2.jpg"
         ]
-    }
+    },
 }
