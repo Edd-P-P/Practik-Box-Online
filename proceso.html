@@ -576,14 +576,7 @@
                                             <option value="Accesorios">Accesorios</option>
                                         </select>
                                     </div>
-                                    
-                                    <!-- Closet o vestidor -->
-                                    <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 'Closet o vestidor'" ng-cloak>
-                                        <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                        <input type="text" placeholder="Medidas de closet" name="medidas_closet" readonly="readonly"/>
-                                        <label class="control-label">Presupuesto</label>
-                                        <input type="text" placeholder="Presupuesto de closet" name="presupuesto_closet" readonly="readonly" />                                       
-                                    </div>
+                                
                                     
                                     <!-- Cocina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 'Muebles de cocina'" ng-cloak>
@@ -594,56 +587,13 @@
                                             <option value="Estanterias">Estanterias</option>
                                             <option value="Gabinetes">Gabinetes</option>
                                             <option value="Otro">Otro</option>
-                                        </select>
-                                        
-                                        <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 'Mueble para cafetera'" ng-cloak>
-                                            <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                            <input type="text" placeholder="Medidas de cafetera" name="medidas_cafetera" readonly="readonly" />
-                                            <label class="control-label">Presupuesto</label>
-                                            <input type="text" placeholder="Presupuesto de cafetera" name="presupuesto_cafetera" readonly="readonly" />                                       
-                                        </div>                                         
-                                        <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 'Estanterias'" ng-cloak>
-                                            <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                            <input type="text" placeholder="Medidas de estanteria" name="medidas_estanteria" readonly="readonly" />
-                                            <label class="control-label">Presupuesto</label>
-                                            <input type="text" placeholder="Presupuesto de estanteria" name="presupuesto_estanteria" readonly="readonly" />                                       
-                                        </div> 
-                                        <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 'Gabinetes'" ng-cloak>
-                                            <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                            <input type="text" placeholder="Medidas de gabinete" name="medidas_gabinete" readonly="readonly" />
-                                            <label class="control-label">Presupuesto</label>
-                                            <input type="text" placeholder="Presupuesto de gabinete" name="presupuesto_gabinete" readonly="readonly" />                                       
-                                        </div>                                       
+                                        </select>               
                                         <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionC == 'Otro'" ng-cloak>
                                             <label class="control-label">Especifica el tipo de mueble de cocina *</label>
                                             <input type="text" class="form-control" placeholder="" name="otro_cocina">
                                         </div> 
                                     </div>
-                                    
-                                    <!-- Baño -->
-                                    <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 'Muebles de baño'" ng-cloak>
-                                        <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                        <input type="text" placeholder="Medidas de muebles de baño" name="medidas_bano" readonly="readonly" />
-                                        <label class="control-label">Presupuesto</label>
-                                        <input type="text" placeholder="Presupuesto de baño" name="presupuesto_bano" readonly="readonly" />                                       
-                                    </div>
-                                    
-                                    <!-- Librería -->
-                                    <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 'Libreria o repisa'" ng-cloak>
-                                        <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                        <input type="text" placeholder="Medidas de librero" name="medidas_librero" readonly="readonly" />
-                                        <label class="control-label">Presupuesto</label>
-                                        <input type="text" placeholder="Presupuesto de librero" name="presupuesto_librero" readonly="readonly" />                                       
-                                    </div>
-                                    
-                                    <!-- Armarios -->
-                                    <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 'Armarios'" ng-cloak>
-                                        <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                        <input type="text" placeholder="Medidas de Armarios" name="medidas_armario" readonly="readonly" />
-                                        <label class="control-label">Presupuesto</label>
-                                        <input type="text" placeholder="Presupuesto de armario" name="presupuesto_armario" readonly="readonly" />                                       
-                                    </div>
-                                    
+                                                                                        
                                     <!-- Oficina -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 'Muebles de oficina'" ng-cloak>
                                         <label class="control-label">Tipo de mueble de oficina *</label>
@@ -654,39 +604,12 @@
                                             <option value="Gabinetes">Gabinetes</option>
                                             <option value="Otro">Otro</option>
                                         </select>
-                                        
-                                        <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionO == 'Escritorios'" ng-cloak>
-                                            <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                            <input type="text" placeholder="Medidas de Escritorio" name="medidas_escritorio" readonly="readonly" />
-                                            <label class="control-label">Presupuesto</label>
-                                            <input type="text" placeholder="Presupuesto de Escritorio" name="presupuesto_escritorio" readonly="readonly" />                         
-                                        </div>                                         
-                                        <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionO == 'Estanterias'" ng-cloak>
-                                            <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                            <input type="text" placeholder="Medidas de estanteria" name="medidas_estanteria_oficina" readonly="readonly" />
-                                            <label class="control-label">Presupuesto</label>
-                                            <input type="text" placeholder="Presupuesto de estanteria" name="presupuesto_estanteria_oficina" readonly="readonly" />                                       
-                                        </div> 
-                                        <div class="form-group col-md-12 mueble-cocina" ng-if="selectOptionO == 'Gabinetes'" ng-cloak>
-                                            <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                            <input type="text" placeholder="Medidas de gabinete" name="medidas_gabinete_oficina" readonly="readonly" />
-                                            <label class="control-label">Presupuesto</label>
-                                            <input type="text" placeholder="Presupuesto de gabinete" name="presupuesto_gabinete_oficina" readonly="readonly" />                                       
-                                        </div>                                       
                                         <div class="form-group col-md-6 mueble-cocina" ng-if="selectOptionO == 'Otro'" ng-cloak>
                                             <label class="control-label">Especifica el tipo de mueble</label>
                                             <input type="text" class="form-control" placeholder="" name="otro_oficina">
                                         </div>
                                     </div>
-                                    
-                                    <!-- Pérgola -->
-                                    <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 'Pergola'" ng-cloak>
-                                        <label class="control-label">Medidas aproximadas (ancho x alto x profundidad en cm)</label>
-                                        <input type="text" placeholder="Medidas de pergola" name="medidas_pergola" readonly="readonly"/>
-                                        <label class="control-label">Presupuesto</label>
-                                        <input type="text" placeholder="Presupuesto de pergola" name="presupuesto_pergola" readonly="readonly"/>                                       
-                                    </div>
-                                    
+                                                                    
                                     <!-- Accesorios -->
                                     <div class="form-group col-md-6 mueble-cocina" ng-if="selectOption == 'Accesorios'" ng-cloak>
                                         <label class="control-label">Tipo de accesorio *</label>
@@ -712,18 +635,7 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label for="estilo">Color *</label>
-                            <select id="estilo" name="color" required>
-                                <option value="">Selecciona un color</option>
-                                <option value="Marron">Marrón</option>
-                                <option value="Negro">Negro</option>
-                                <option value="Blanco">Blanco</option>
-                                <option value="Rojo">Rojo</option>
-                            </select>
-                        </div>
-                        
+                                                
                         <div class="form-group">
                             <label for="nombre">Nombre completo *</label>
                             <input type="text" id="nombre" name="nombre" required>

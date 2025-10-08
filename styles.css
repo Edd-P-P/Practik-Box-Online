@@ -35,10 +35,22 @@ h1, h2, h3, h4, h5, h6 {
     color: #7a3e11;
 }
 
-.logo img{
-    width: 76%;
-    height: auto;
+.logo img {
+  height: 65px;
+  width: auto;
+  display: block;
+  margin-top: 2%;
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+  border-radius: 13px;
 }
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 30px;
+}
+
 
 .container {
     width: 90%;
@@ -64,10 +76,7 @@ header {
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    text-decoration: none;
+    font-size: 0.5rem;
 }
 
 .nav-links {
@@ -122,6 +131,7 @@ header {
 
 .hero-content p {
 padding-top: 5px;
+padding-bottom: 10px;
 }
 
 .btn-readmore{
@@ -269,6 +279,10 @@ padding-top: 5px;
 
 .category-content {
     padding: 1.5rem;
+}
+
+.category-content p {
+    padding-bottom: 10px;
 }
 
 /* Proceso simplificado */
@@ -650,12 +664,6 @@ header.scrolled {
 }
 
 /*Animacion para el logo*/
-            
-.logo {
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
 .logo:hover {
     transform: scale(1.05);
     color: var(--color-secondary);
@@ -890,6 +898,13 @@ html {
         .contact-text p{
         font-size: 1rem;
         padding-right: 25px;
+    }
+
+        .logo img {
+        height: 50px;
+        width: auto;
+        display: block;
+        margin-top: 2%;
     }
 
     }
