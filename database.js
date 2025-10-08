@@ -64,8 +64,8 @@ const productos = {
         descripcion: 'Diseños modernos y funcionales para tu entretenimiento.',
         imagenes: [
             "Imagenes/Productos/centrotv.png",
-            "Imagenes/Productos/Armario1.jpg",
-            "Imagenes/Productos/Armario2.png"
+            "Imagenes/Productos/centrotv1.png",
+            "Imagenes/Productos/centrotv2.png"
         ],
         caracteristicas: [
             "Diseños personalizados para maximizar el espacio de almacenamiento.",
@@ -130,7 +130,7 @@ const accesorios = {
     },
 
     2: {
-        nombre: 'Tablas para queso',
+        nombre: 'Tablas',
         descripcion: 'Descubre la elegancia natural de nuestras tablas: una fusión perfecta de diseño, funcionalidad y sabor.',
         imagenes: [ 
             "Imagenes/Productos/accesorios/Tablas para queso.png",
@@ -153,7 +153,7 @@ const accesorios = {
         nombre: 'Banquitos',
         descripcion: 'Banquitos de madera que fusionan elegancia atemporal con funcionalidad. Diseños cuidadosamente elaborados para aportar calidez y estilo a cualquier espacio.',
         imagenes: [ 
-            "Imagenes/Productos/accesorios/banquitos.jpg",
+            "Imagenes/Productos/accesorios/banquitos.png",
             "Imagenes/Productos/accesorios/banquitos1.jpg",
             "Imagenes/Productos/accesorios/banquitos2.jpg"
         ]
