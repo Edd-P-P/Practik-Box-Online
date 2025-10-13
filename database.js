@@ -52,6 +52,7 @@ const productos = {
             "Imagenes/Productos/repisas1.png",
             "Imagenes/Productos/repisas2.png"
         ],
+
         caracteristicas: [
             "Diseños personalizados para adaptarse a cualquier espacio.",
             "Materiales duraderos y acabados elegantes.",
