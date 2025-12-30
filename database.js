@@ -122,11 +122,10 @@ const productos = {
 const accesorios = {
     1: {
         nombre: 'Cajas de Té',
-        descripcion: 'Hermosa caja de madera con divisores internos para organizar tus tés favoritos. Acabado natural que realza la veta de la madera.',
+        descripcion: 'Hermosa caja de madera con divisores internos para organizar tus tés favoritos. Acabado natural que realza la veta de la madera. Medidas: 35x10x20 cms y 25x25x25 cms',
         imagenes: [ 
             "Imagenes/Productos/accesorios/cajate.jpg",
-            "Imagenes/Productos/accesorios/cajate1.jpg",
-            "Imagenes/Productos/accesorios/cajate2.jpg"
+            "Imagenes/Productos/accesorios/cajate1.jpg"
         ]
     },
 
